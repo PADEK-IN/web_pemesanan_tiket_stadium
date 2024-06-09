@@ -30,7 +30,6 @@
 </head>
 
 <body>
-
   <!--==========================
     Header
   ============================-->
@@ -52,7 +51,7 @@
           <li><a href="#gallery">Koleksi</a></li>
           <li><a href="#sponsors">Sponsor</a></li>
           <li><a href="#contact">Kontak</a></li>
-          <li class="buy-tickets"><a href="{{ route('login') }}">Login/Register</a></li>
+          <li class="buy-tickets"><a href="{{ route('login') }}">Masuk</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -67,7 +66,7 @@
       <p class="mb-4 pb-0">Jalan Gubernur H. A. Bastari, Jakabaring, Palembang, Indonesia</p>
       <a href="https://www.youtube.com/watch?v=C1f5cDrkKqw" class="venobox play-btn mb-4" data-vbtype="video"
         data-autoplay="true"></a>
-      <a href="#about" class="about-btn scrollto">Tentang Stadium</a>
+      <a href="#about" class="about-btn scrollto">Tentang</a>
     </div>
   </section>
 
@@ -80,10 +79,10 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <h2>Tentang Stadium</h2>
+            <h2>Tentang</h2>
             <p>Stadion Jakabaring, terletak di Palembang, Sumatera Selatan, adalah salah satu ikon olahraga dan hiburan di Indonesia. Resmi dibuka pada tahun 2004, stadion ini memiliki kapasitas lebih dari 23.000 penonton dan telah menjadi tuan rumah bagi berbagai acara bergengsi, mulai dari pertandingan sepak bola internasional hingga konser musik besar. </p>
             <p>Dirancang dengan fasilitas modern, Stadion Jakabaring menawarkan pengalaman menonton yang tak tertandingi bagi para pengunjung. Dengan tempat duduk yang nyaman, sistem pencahayaan mutakhir, dan akustik yang superior, setiap acara di stadion ini dijamin memberikan kenangan yang tak terlupakan.</p>
-            <p>Dengan TickItNow, Anda bisa memastikan tempat Anda di semua acara seru yang diadakan di Stadion Jakabaring. Jangan lewatkan kesempatan untuk menjadi bagian dari momen-momen istimewa dan buat kenangan yang abadi bersama kami!</p>
+            <p>Dengan TakeItNow, Anda bisa memastikan tempat Anda di semua acara seru yang diadakan di Stadion Jakabaring. Jangan lewatkan kesempatan untuk menjadi bagian dari momen-momen istimewa dan buat kenangan yang abadi bersama kami!</p>
           </div>
 
         </div>
@@ -397,7 +396,7 @@
             <div class="contact-email">
               <i class="ion-ios-email-outline"></i>
               <h3>Email</h3>
-              <p><a href="mailto:info@tickitnow.com">info@tickitnow.com</a></p>
+              <p><a href="mailto:info@takeitnow.com">info@takeitnow.com</a></p>
             </div>
           </div>
 
@@ -444,8 +443,8 @@
         <div class="row">
 
           <div class="col-lg-6 col-md-6 footer-info">
-            <img src="{{ asset('assets/img/logo.png') }}" alt="TheEvenet">
-            <p>TickItNow, solusi terbaik Anda untuk memesan tiket berbagai acara di Stadion Jakabaring! Kami menyediakan platform yang mudah digunakan untuk memastikan Anda tidak ketinggalan momen seru dari konser, pertandingan olahraga, dan acara spektakuler lainnya. Dengan TickItNow, Anda bisa mendapatkan tiket Anda dengan cepat, aman, dan nyaman.</p>
+            <img src="{{ asset('assets/img/logo.png') }}" alt="TakeItNow">
+            <p>TakeItNow, solusi terbaik Anda untuk memesan tiket brbagai acara di Stadion Jakabaring! Kami menyediakan platform yang mudah digunakan untuk memastikan Anda tidak ketinggalan momen seru dari konser, pertandingan olahraga, dan acara spektakuler lainnya. Dengan TakeItNow, Anda bisa mendapatkan tiket Anda dengan cepat, aman, dan nyaman.</p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
@@ -466,7 +465,7 @@
               Jakabaring, Palembang<br>
               Indonesia <br>
               <strong>Telepon:</strong> +628 1234 5678 9000<br>
-              <strong>Email:</strong> info@tickitnow.com<br>
+              <strong>Email:</strong> info@takeitnow.com<br>
             </p>
 
             <div class="social-links">
@@ -484,7 +483,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong>TickItNow</strong>. All Rights Reserved
+        &copy; Copyright <strong>TakeItNow</strong>. All Rights Reserved
       </div>
       <div class="credits">
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
