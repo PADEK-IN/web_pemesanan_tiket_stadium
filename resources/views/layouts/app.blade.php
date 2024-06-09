@@ -10,15 +10,14 @@
     <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
     <link href="{{ asset('assets/img/favicon.png') }}" rel="apple-touch-icon">
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/vendor/bootstrap/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/fonts/circular-std/style.css') }}" >
     <link rel="stylesheet" href="{{ asset('assets/admin/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/fonts/fontawesome/css/fontawesome-all.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/admin/vendor/charts/chartist-bundle/chartist.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/admin/vendor/charts/morris-bundle/morris.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/admin/vendor/charts/c3charts/c3.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/fonts/flag-icon-css/flag-icon.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/vendor/datatables/css/dataTables.bootstrap4.css') }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
 </head>
 
@@ -75,13 +74,13 @@
                                 <a class="nav-link" href="{{ route('event') }}" aria-expanded="false"><i class="far fa-star"></i>Acara</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="{{ route('dashboard') }}" aria-expanded="false"><i class="far fa-gem"></i>Tiket</a>
+                                <a class="nav-link" href="{{ route('ticket') }}" aria-expanded="false"><i class="far fa-gem"></i>Tiket</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="{{ route('dashboard') }}" aria-expanded="false"><i class="far fa-money-bill-alt"></i>Transaksi</a>
+                                <a class="nav-link" href="{{ route('transaction') }}" aria-expanded="false"><i class="far fa-money-bill-alt"></i>Transaksi</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="{{ route('dashboard') }}" aria-expanded="false"><i class="fa fa-fw fa-user-circle"></i>User</a>
+                                <a class="nav-link" href="{{ route('user') }}" aria-expanded="false"><i class="fa fa-fw fa-user-circle"></i>User</a>
                             </li>
                         </ul>
                     </div>
@@ -128,23 +127,19 @@
     <!-- jquery 3.3.1 -->
     <script src="{{ asset('assets/admin/vendor/jquery/jquery-3.3.1.min.js') }}"></script>
     <!-- bootstap bundle js -->
+    <script src="{{ asset('assets/admin/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <!-- bootstap bundle js -->
     <script src="{{ asset('assets/admin/vendor/bootstrap/js/bootstrap.bundle.js') }}"></script>
+    <!-- bootstap bundle js -->
+    <script src="{{ asset('assets/admin/vendor/bootstrap/js/popper.min.js') }}"></script>
     <!-- slimscroll js -->
     <script src="{{ asset('assets/admin/vendor/slimscroll/jquery.slimscroll.js') }}"></script>
+    <!-- Datatable js -->
+    <script src="{{ asset('assets/admin/vendor/datatables/js/dataTables.js') }}"></script>
+    <!-- Datatable js -->
+    <script src="{{ asset('assets/admin/vendor/datatables/js/dataTables.bootstrap4.js') }}"></script>
     <!-- main js -->
     <script src="{{ asset('assets/admin/js/main-js.js') }}"></script>
-    <!-- chart chartist js -->
-    <script src="{{ asset('assets/admin/vendor/charts/chartist-bundle/chartist.min.js') }}"></script>
-    <!-- sparkline js -->
-    <script src="{{ asset('assets/admin/vendor/charts/sparkline/jquery.sparkline.js') }}"></script>
-    <!-- morris js -->
-    <script src="{{ asset('assets/admin/vendor/charts/morris-bundle/raphael.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/vendor/charts/morris-bundle/morris.js') }}"></script>
-    <!-- chart c3 js -->
-    <script src="{{ asset('assets/admin/vendor/charts/c3charts/c3.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/vendor/charts/c3charts/d3-5.4.0.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/vendor/charts/c3charts/C3chartjs.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/dashboard-ecommerce.js') }}"></script>
 </body>
 
 </html>

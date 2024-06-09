@@ -15,6 +15,18 @@ Route::get('/event', function () {
     return view('pages.admin.events.list');
 })->middleware(['auth', 'verified'])->name('event');
 
+Route::get('/ticket', function () {
+    return view('pages.admin.tickets.list');
+})->middleware(['auth', 'verified'])->name('ticket');
+
+Route::get('/transaction', function () {
+    return view('pages.admin.transactions.list');
+})->middleware(['auth', 'verified'])->name('transaction');
+
+Route::get('/user', function () {
+    return view('pages.admin.users.list');
+})->middleware(['auth', 'verified'])->name('user');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

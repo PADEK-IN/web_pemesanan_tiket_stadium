@@ -1,9 +1,9 @@
 <x-app-layout>
     <div class="card">
-        <h5 class="card-header">Semua Data Acara</h5>
+        <h5 class="card-header">Semua Data Pengguna</h5>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="event-list" class="table table-striped table-bordered my-3">
+                <table id="user-list" class="table table-striped table-bordered my-3">
                     <thead>
                         <tr>
                             <th class="text-center px-2" >No</th>
