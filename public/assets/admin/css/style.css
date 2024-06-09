@@ -11,7 +11,7 @@
         - 0.6. Pageheader
         - 0.7. Footer
 
-   ------------------------- 
+   -------------------------
 
  *  1. Dashboard
 
@@ -30,14 +30,14 @@
     - 2.6.  Notifications
     - 2.7.  Icon
     - 2.8.  Tabs
-    - 2.9.  Accordions   
+    - 2.9.  Accordions
     - 2.10. Typography
     - 2.11. Listgroup
     - 2.12. Multiselect
     - 2.13. Badge
     - 2.14. Pagination
     - 2.15. Switch Toogle
-    - 2.16. Spinner   
+    - 2.16. Spinner
 
 
     ----------------------------
@@ -75,13 +75,13 @@
 
 
          ----------------------------
-     
+
 
 6. Pages
 
     - 6.1.   Blank Page
     - 6.2.   Blank Page Header
-    - 6.3.   Login  
+    - 6.3.   Login
     - 6.4.   Sign up
     - 6.5.   Forgot Password
     - 6.6.   Profile
@@ -99,16 +99,16 @@
 
 
          ----------------------------
-     
+
 7. Email
 
     - 7.1.  Inbox
     - 7.2.  Email Detail
     - 7.3.  Email Compose
     - 7.4.  Message Chat
-  
+
        ----------------------------
-     
+
 
 8. Layouts
 
@@ -130,7 +130,7 @@
 
 
        ----------------------------
-     
+
 
 9. Maps
 
@@ -138,7 +138,7 @@
     - 9.2.  Vector Map
 
        ----------------------------
-     
+
 
 10. Menu Level
 
@@ -152,7 +152,7 @@
    ========================================================================== */
 
 
-/* 0.1. Body / Typography 
+/* 0.1. Body / Typography
    ========================================================================== */
 
 body {
@@ -239,7 +239,7 @@ ul li {}
 }
 
 
-/*-------------------- 
+/*--------------------
  Form
 ---------------------*/
 
@@ -319,7 +319,7 @@ input::-webkit-input-placeholder {
 }
 
 input:focus::-webkit-input-placeholder {
-    color: #5969ff !important;
+    color: #f82249 !important;
 }
 
 textarea::-webkit-input-placeholder {
@@ -327,7 +327,7 @@ textarea::-webkit-input-placeholder {
 }
 
 textarea:focus::-webkit-input-placeholder {
-    color: #5969ff !important;
+    color: #f82249 !important;
 }
 
 button.btn {}
@@ -372,13 +372,13 @@ address {}
 }
 
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #5969ff;
-    border-color: #5969ff;
+    background-color: #f82249;
+    border-color: #f82249;
 }
 
 .custom-control-input:checked~.custom-control-label::before {
     color: #fff;
-    background-color: #5969ff;
+    background-color: #f82249;
 }
 
 .custom-checkbox .custom-control-input:checked~.custom-control-label::after {}
@@ -414,8 +414,8 @@ address {}
 }
 
 .custom-radio .custom-control-input:checked~.custom-control-label::before {
-    background-color: #5969ff;
-    border-color: #5969ff;
+    background-color: #f82249;
+    border-color: #f82249;
 }
 
 .custom-control-input:disabled~.custom-control-label::before {
@@ -480,7 +480,7 @@ address {}
 }
 
 
-/*----------------------- 
+/*-----------------------
 Parsley Varifation
 -------------------------*/
 
@@ -494,7 +494,7 @@ Parsley Varifation
 }
 
 
-/*-------------------- 
+/*--------------------
  Padding / Margin
 ---------------------*/
 
@@ -739,7 +739,7 @@ Parsley Varifation
 }
 
 
-/*-------------------- 
+/*--------------------
  Font Weight
 ---------------------*/
 
@@ -804,7 +804,7 @@ html body .display-7 {
 }
 
 
-/*-------------------- 
+/*--------------------
  Arrow  List
 ---------------------*/
 
@@ -851,12 +851,12 @@ html body .display-7 {
 }
 
 
-/*----------------------- 
+/*-----------------------
 Background Color / Color
 -------------------------*/
 
 .bg-primary {
-    background-color: #5969ff !important;
+    background-color: #f82249 !important;
     color: #fff !important;
 }
 
@@ -920,7 +920,7 @@ Background Color / Color
 }
 
 
-/*----------------------- 
+/*-----------------------
 Borders
 -------------------------*/
 
@@ -953,12 +953,12 @@ Borders
 }
 
 
-/*----------------------- 
+/*-----------------------
  Color
 -------------------------*/
 
 .text-primary {
-    color: #5969ff !important;
+    color: #f82249 !important;
 }
 
 .text-brand {
@@ -1006,12 +1006,12 @@ Borders
 }
 
 
-/*----------------------- 
+/*-----------------------
 Borders
 -------------------------*/
 
 .border-top-primary {
-    border-top-color: #5969ff !important;
+    border-top-color: #f82249 !important;
 }
 
 .border-3 {
@@ -1031,7 +1031,7 @@ Borders
 }
 
 
-/*----------------------- 
+/*-----------------------
 Fontawesome size
 -------------------------*/
 
@@ -1050,7 +1050,7 @@ Fontawesome size
 }
 
 
-/*----------------------- 
+/*-----------------------
 Social Color
 -------------------------*/
 
@@ -1091,7 +1091,7 @@ Social Color
 }
 
 
-/*----------------------- 
+/*-----------------------
 Social bg Color
 -------------------------*/
 
@@ -1131,17 +1131,17 @@ Social bg Color
 }
 
 
-/*----------------------- 
+/*-----------------------
 Progress bar
 -------------------------*/
 
 .progress-bar {
 
-    background-color: #5969ff;
+    background-color: #f82249;
 }
 
 .primary-progress-bar {
-    background-color: #5969ff;
+    background-color: #f82249;
 }
 
 .progress-sm {
@@ -1192,7 +1192,7 @@ Progress bar
 }
 
 
-/*----------------------- 
+/*-----------------------
 Legends
 -------------------------*/
 
@@ -1215,7 +1215,7 @@ Legends
    ========================================================================== */
 
 
-/*----------------------- 
+/*-----------------------
 Top Header
 -------------------------*/
 
@@ -1237,7 +1237,7 @@ Top Header
     margin-right: 1rem;
     line-height: inherit;
     white-space: nowrap;
-    padding: 11px 20px;
+    padding-left: 25px;
     font-size: 30px;
     text-transform: uppercase;
     font-weight: 700;
@@ -1257,7 +1257,8 @@ Top Header
 }
 
 .navbar-right-top .nav-item .nav-link {
-    padding: 13px 20px;
+    margin-right: 20px;
+    padding: 0;
     font-size: 16px;
     line-height: 2;
     color: #82849f;
@@ -1356,7 +1357,7 @@ Top Header
 }
 
 .notification-list-user-name {
-    color: #5969ff;
+    color: #f82249;
     font-size: 14px;
     margin-right: 8px;
 }
@@ -1369,7 +1370,7 @@ Top Header
     padding: 10px 0px;
     line-height: 1.5;
     font-weight: 700;
-    background-color: #5969ff;
+    background-color: #f82249;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
 }
@@ -1469,7 +1470,7 @@ Top Header
 .nav-user-name {}
 
 .nav-user-info {
-    background-color: #5969ff;
+    background-color: #f82249;
     line-height: 1.4;
     padding: 12px;
     color: #fff;
@@ -1512,10 +1513,10 @@ Top Header
 
 
 .navigation-horizontal {
-   
+
     width: 100%;
     height: 100%;
-  
+
     overflow: auto;
    /* background-color: #fff;
     -webkit-box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
@@ -1633,13 +1634,13 @@ Top Header
 
 
 
-/* ----------------------- 
+/* -----------------------
 Left Navigation Sidebar
 ------------------------- */
 
 .nav-left-sidebar {
     position: fixed;
-    width: 264px;
+    width: 250px;
     height: 100%;
     top: 60px;
     overflow: auto;
@@ -1757,7 +1758,7 @@ Left Navigation Sidebar
     border: 1px solid transparent;
     border-radius: .25rem;
 }
-/* ----------------------- 
+/* -----------------------
 Leftsidebar - Primary
 ------------------------- */
 
@@ -1800,7 +1801,7 @@ Leftsidebar - Primary
 }
 
 
-/* ----------------------- 
+/* -----------------------
 Leftsidebar - dark
 ------------------------- */
 
@@ -1856,7 +1857,7 @@ Leftsidebar - dark
 /*-----navigation dark ---*/
 
 
-/*----------------------- 
+/*-----------------------
 Sidebar Page Navigations
 -------------------------*/
 
@@ -1880,12 +1881,12 @@ Sidebar Page Navigations
 }
 
 .sidebar-nav-fixed ul li a:hover {
-    color: #5969ff;
+    color: #f82249;
 }
 
 .sidebar-nav-fixed ul li a.active {
     display: block;
-    color: #5969ff;
+    color: #f82249;
     background: #e0e0fd;
 }
 
@@ -1913,7 +1914,7 @@ Sidebar Page Navigations
 }
 
 .dropdown-item:hover {
-    color: #5969ff;
+    color: #f82249;
     background: #efeff6;
 }
 
@@ -1923,14 +1924,14 @@ Sidebar Page Navigations
 .dropdown-item:active {
     color: #fff;
     text-decoration: none;
-    background-color: #5969ff;
+    background-color: #f82249;
 }
 
 
 /* -------------------- 0.5.Container / Wrapper ----------------------- */
 
 
-/*----------------------- 
+/*-----------------------
 Container / Wrapper
 -------------------------*/
 
@@ -1952,7 +1953,7 @@ Container / Wrapper
 }
 
 
-/*----------------------- 
+/*-----------------------
 Splash Container / Wrapper
 -------------------------*/
 
@@ -1991,7 +1992,7 @@ Splash Container / Wrapper
 /* -------------------- 0.6.Pageheader ----------------------- */
 
 
-/*----------------------- 
+/*-----------------------
 Pageheader
 -------------------------*/
 
@@ -2010,7 +2011,7 @@ Pageheader
 }
 
 .page-breadcrumb .breadcrumb-link:hover {
-    color: #5969ff;
+    color: #f82249;
 }
 
 .page-breadcrumb .breadcrumb {
@@ -2054,7 +2055,7 @@ Pageheader
 /* -------------------- 0.7.Footer ----------------------- */
 
 
-/*----------------------- 
+/*-----------------------
  Footer
 -------------------------*/
 
@@ -2327,7 +2328,7 @@ Pageheader
 .ribbons{
     -webkit-clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 100%, 50% 73%, 10% 100%, 10% 50%);
 clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 100%, 50% 73%, 10% 100%, 10% 50%);
-  
+
     position: absolute;
     top: 0px;
     background-color: #59b3ff;
@@ -2339,7 +2340,7 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
     position: absolute;
     top: 11px;
     left: 10px;
-    color: #fff;} 
+    color: #fff;}
 .product-wishlist-btn{height: 40px;
     width: 40px;
     border: 2px solid #dfdfec;
@@ -2358,7 +2359,7 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
 .product-content-head{ position: relative; margin-bottom: 25px; }
 .product-title{font-size: 16px; margin-bottom: 5px;}
 .product-rating{font-size: 12px;
-    
+
     color: #ffa811;}
 .product-price{ position: absolute; top: 0; right: 0; font-size: 16px; color: #3d405c;font-family: 'Circular Std Medium'; line-height: 1;}
 .product-btn{}
@@ -2411,7 +2412,7 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
     background-color: rgb(224, 224, 231);
     border-radius: 100%;
 }
-.product-carousel .carousel-indicators li.active{ background-color: #5969ff; }
+.product-carousel .carousel-indicators li.active{ background-color: #f82249; }
 .product-carousel .carousel-control-next, .carousel-control-prev {display: none;}
 
 
@@ -2553,7 +2554,7 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
   color: #333;
   font-size: 13px;
   font-family: 'Circular Std Medium';
-  
+
   line-height: 1.6;
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
@@ -2595,12 +2596,12 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
   ========================================================================== */
 
 
-/* ----------------------- 
+/* -----------------------
 2.1  Alerts
 -------------------------*/
 
 
-/* ----------------------- 
+/* -----------------------
 2.2  Buttons
 -------------------------*/
 
@@ -2656,8 +2657,8 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
 
 .btn-primary {
     color: #fff;
-    background-color: #5969ff;
-    border-color: #5969ff;
+    background-color: #f82249;
+    border-color: #f82249;
 }
 
 .btn-primary:hover {
@@ -2916,22 +2917,22 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
 /*--- btn outline primary --*/
 
 .btn-outline-primary {
-    color: #5969ff;
+    color: #f82249;
     background-color: transparent;
-    border-color: #5969ff;
+    border-color: #f82249;
 }
 
 .btn-outline-primary:hover {
     color: #fff;
-    background-color: #5969ff;
-    border-color: #5969ff;
+    background-color: #f82249;
+    border-color: #f82249;
 }
 
 .btn-outline-primary.focus,
 .btn-outline-primary:focus {
     color: #fff;
-    background-color: #5969ff;
-    border-color: #5969ff;
+    background-color: #f82249;
+    border-color: #f82249;
     box-shadow: 0 0 0 1px rgb(65, 77, 167);
 }
 
@@ -3173,12 +3174,12 @@ clip-path: polygon(10% 25%, 10% 0, 35% 0%, 65% 0%, 90% 0, 90% 25%, 90% 50%, 91% 
 }
 
 
-/*----------------------- 
+/*-----------------------
 btn-link
 -------------------------*/
 
 .btn-link {
-    color: #5969ff;
+    color: #f82249;
 }
 
 .btn-link:hover {
@@ -3186,7 +3187,7 @@ btn-link
 }
 
 .btn-primary-link {
-    color: #5969ff !important;
+    color: #f82249 !important;
 }
 
 .btn-brand-link {
@@ -3198,7 +3199,7 @@ btn-link
 }
 
 
-/* ----------------------- 
+/* -----------------------
 2.3  Cards
 -------------------------*/
 
@@ -3254,7 +3255,7 @@ btn-link
 
 .card-toolbar-tabs .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
-    color: #5969ff;
+    color: #f82249;
     background-color: transparent;
 }
 
@@ -3441,12 +3442,12 @@ btn-link
 .card-header-pills {}
 
 .pills-regular .card-header-pills.nav.nav-pills .nav-item .nav-link.active {
-    background-color: #5969ff;
+    background-color: #f82249;
     color: #fff;
 }
 
 
-/* ----------------------- 
+/* -----------------------
 2.4  General
 -------------------------*/
 
@@ -3478,7 +3479,7 @@ btn-link
 }
 
 
-/* ----------------------- 
+/* -----------------------
 2.5  Modals
 -------------------------*/
 
@@ -3491,12 +3492,12 @@ btn-link
 }
 
 
-/* ----------------------- 
+/* -----------------------
 2.6  Notification
 -------------------------*/
 
 
-/* ----------------------- 
+/* -----------------------
 2.7  Icon
 -------------------------*/
 
@@ -3546,7 +3547,7 @@ btn-link
 }
 
 
-/* ----------------------- 
+/* -----------------------
 2.8  Tabs
 -------------------------*/
 
@@ -3573,7 +3574,7 @@ btn-link
 .tab-regular .nav-tabs .nav-link.active {
     background-color: #fff;
     border-color: #e6e6f2 #e6e6f2 #fff;
-    color: #5969ff;
+    color: #f82249;
 }
 
 .tab-regular .tab-content {
@@ -3614,7 +3615,7 @@ btn-link
 }
 
 .tab-vertical .nav-tabs .nav-link.active {
-    color: #5969ff;
+    color: #f82249;
     background-color: #fff !important;
     border-color: transparent !important;
 }
@@ -3655,7 +3656,7 @@ btn-link
 .tab-outline .nav.nav-tabs .nav-item {}
 
 .tab-outline .nav-tabs .nav-link.active {
-    color: #5969ff !important;
+    color: #f82249 !important;
     background-color: transparent !important;
     border-color: #c4c4cf #c4c4cf #efeff6 !important;
 }
@@ -3663,7 +3664,7 @@ btn-link
 .tab-outline .nav-tabs .nav-link:focus,
 .nav-tabs .nav-link:hover {
     border-color: transparent;
-    color: #5969ff !important;
+    color: #f82249 !important;
 }
 
 .tab-outline .tab-content {
@@ -3704,7 +3705,7 @@ btn-link
 }
 
 .tab-vertical-outline .nav-tabs .nav-link.active {
-    color: #5969ff;
+    color: #f82249;
     border: 1px solid #c4c4cf !important;
     background: transparent;
     border-right: 1px solid #efeff6 !important;
@@ -3755,7 +3756,7 @@ btn-link
 }
 
 .simple-card .nav-tabs .nav-link.active {
-    color: #5969ff !important;
+    color: #f82249 !important;
     background-color: transparent !important;
     border-color: #e9e9f2 #e9e9f2 #fff !important;
 }
@@ -3789,7 +3790,7 @@ btn-link
 }
 
 .simple-outline-card .nav-tabs .nav-link.active {
-    color: #5969ff !important;
+    color: #f82249 !important;
     background-color: transparent !important;
     border-color: #c4c4cf #c4c4cf #efeff6 !important;
 }
@@ -3799,7 +3800,7 @@ btn-link
 }
 
 
-/* ----------------------- 
+/* -----------------------
 Pills Regular
 -------------------------*/
 
@@ -3820,7 +3821,7 @@ Pills Regular
 
 .pills-regular .nav.nav-pills .nav-item .nav-link.active {
     background-color: #fff;
-    color: #5969ff;
+    color: #f82249;
 }
 
 .pills-regular .tab-content {
@@ -3830,7 +3831,7 @@ Pills Regular
 }
 
 
-/* ----------------------- 
+/* -----------------------
 Pills Outline
 -------------------------*/
 
@@ -3850,7 +3851,7 @@ Pills Outline
 
 .pills-outline .nav.nav-pills .nav-item .nav-link.active {
     background-color: transparent;
-    color: #5969ff;
+    color: #f82249;
 }
 
 .pills-outline .tab-content {
@@ -3861,7 +3862,7 @@ Pills Outline
 }
 
 
-/* ----------------------- 
+/* -----------------------
 Pills vertical
 -------------------------*/
 
@@ -3878,7 +3879,7 @@ Pills vertical
 
 .pills-vertical .nav.nav-pills .nav-link.active {
     background-color: #fff;
-    color: #5969ff;
+    color: #f82249;
 }
 
 .pills-vertical .tab-content {
@@ -3888,7 +3889,7 @@ Pills vertical
 }
 
 
-/* ----------------------- 
+/* -----------------------
 2.9  Accordions
 -------------------------*/
 
@@ -3958,12 +3959,12 @@ Pills vertical
 }
 
 
-/* ----------------------- 
+/* -----------------------
 2.10  Typography
 -------------------------*/
 
 
-/* ----------------------- 
+/* -----------------------
 2.11  Listgroup
 -------------------------*/
 
@@ -3976,12 +3977,12 @@ Pills vertical
 }
 
 
-/* ----------------------- 
+/* -----------------------
 2.12  Multiselect
 -------------------------*/
 
 
-/*----------------------- 
+/*-----------------------
 2.13 Badge
 -------------------------*/
 
@@ -3998,7 +3999,7 @@ Pills vertical
 }
 
 .badge-primary {
-    background-color: #5969ff;
+    background-color: #f82249;
 }
 
 .badge-primary[href]:focus,
@@ -4122,7 +4123,7 @@ Pills vertical
 }
 
 .label-primary {
-    background-color: #5969ff;
+    background-color: #f82249;
 }
 
 .label-success {
@@ -4134,7 +4135,7 @@ Pills vertical
 }
 
 
-/*----------------------- 
+/*-----------------------
 2.14 Pagination
 -------------------------*/
 
@@ -4156,15 +4157,15 @@ Pills vertical
     z-index: 2;
     color: #fff;
     text-decoration: none;
-    background-color: #5969ff;
-    border-color: #5969ff;
+    background-color: #f82249;
+    border-color: #f82249;
 }
 
 .page-item.active .page-link {
     z-index: 1;
     color: #fff;
-    background-color: #5969ff;
-    border-color: #5969ff;
+    background-color: #f82249;
+    border-color: #f82249;
 }
 
 
@@ -4207,16 +4208,16 @@ Pills vertical
     border-radius: 50%;
     background-color: transparent;
     border: 6px solid transparent;
-    border-top: 6px solid #5969ff;
-    border-left: 6px solid #5969ff;
+    border-top: 6px solid #f82249;
+    border-left: 6px solid #f82249;
     -webkit-animation: 1s spin linear infinite;
     animation: 1s spin linear infinite;
     display: inline-block;
 }
 
 .spinner-primary {
-    border-top-color: #5969ff;
-    border-left-color: #5969ff;
+    border-top-color: #f82249;
+    border-left-color: #f82249;
 }
 
 .spinner-secondary {
@@ -4267,7 +4268,7 @@ Pills vertical
 }
 
 
-/*----------------------- 
+/*-----------------------
 2.16 Switch Toggle
 -------------------------*/
 
@@ -4337,7 +4338,7 @@ Pills vertical
 }
 
 .switch-button input[type=checkbox]:checked+span {
-    background-color: #5969ff;
+    background-color: #f82249;
     display: block;
     position: absolute;
     top: 0;
@@ -4395,7 +4396,7 @@ Pills vertical
   ========================================================================== */
 
 
-/*----------------------- 
+/*-----------------------
 3.1 Chartist.js
 -------------------------*/
 
@@ -4420,7 +4421,7 @@ Pills vertical
 }
 
 
-/*----------------------- 
+/*-----------------------
 3.2 Sprkling.js
 -------------------------*/
 
@@ -4434,17 +4435,17 @@ Pills vertical
 }
 
 
-/*----------------------- 
+/*-----------------------
 3.3 Charts.js
 -------------------------*/
 
 
-/*----------------------- 
+/*-----------------------
 3.4 Morris.js
 -------------------------*/
 
 
-/*----------------------- 
+/*-----------------------
 3.5 C3 Charts.js
 -------------------------*/
 
@@ -4454,32 +4455,32 @@ Pills vertical
   ========================================================================== */
 
 
-/*----------------------- 
+/*-----------------------
 4.1.  Form Elements
 ------------------*/
 
 
-/*----------------------- 
+/*-----------------------
 4.2.  Form Validations
 ------------------*/
 
 
-/*----------------------- 
+/*-----------------------
 4.3.  Multiseelct
 -----------------*/
 
 
-/*----------------------- 
+/*-----------------------
 4.4.  Wizard
 ------------------*/
 
 
-/*----------------------- 
+/*-----------------------
 4.5.  Summar Note / Text Editor
 ------------------*/
 
 
-/*----------------------- 
+/*-----------------------
 4.6.  Multiupload
 --------------------*/
 
@@ -4489,7 +4490,7 @@ Pills vertical
  ========================================================================== */
 
 
-/*----------------------- 
+/*-----------------------
 5.1.  General
 --------------------*/
 
@@ -4534,7 +4535,7 @@ Pills vertical
 }
 
 
-/*----------------------- 
+/*-----------------------
 5.2.  Data Tables
 --------------------*/
 
@@ -4543,14 +4544,14 @@ Pills vertical
 
 tr.group,
 tr.group:hover {
-    background-color: #5969ff !important;
+    background-color: #f82249 !important;
     color: #fff;
     font-family: 'Circular Std Medium';
     font-size: 18px;
 }
 
 
-/*----------------------- 
+/*-----------------------
 5.3. Table Filters
 --------------------*/
 
@@ -4560,47 +4561,47 @@ tr.group:hover {
  ========================================================================== */
 
 
-/*----------------------- 
+/*-----------------------
 6.1 Blank Page
 -------------------------*/
 
 
-/*----------------------- 
+/*-----------------------
 6.2 Blank Page Header
 -------------------------*/
 
 
-/*----------------------- 
+/*-----------------------
 6.3 Login
 -------------------------*/
 
 
-/*----------------------- 
+/*-----------------------
 6.4 Sign up Page
 -------------------------*/
 
 
-/*----------------------- 
+/*-----------------------
 6.5 Forgot Password
 -------------------------*/
 
 
-/*----------------------- 
+/*-----------------------
 6.6 Profile
 -------------------------*/
 
 
-/*----------------------- 
+/*-----------------------
 6.7 Pricing
 -------------------------*/
 
 
-/*----------------------- 
+/*-----------------------
 6.8 Timeline
 -------------------------*/
 
 
-/* -------------------------------- 
+/* --------------------------------
 
 Patterns - reusable parts of our design
 
@@ -4613,7 +4614,7 @@ Patterns - reusable parts of our design
 }
 
 
-/* -------------------------------- 
+/* --------------------------------
 
 Vertical Timeline - by CodyHouse.co
 
@@ -4962,7 +4963,7 @@ Vertical Timeline - by CodyHouse.co
 }
 
 
-/*----------------------- 
+/*-----------------------
 6.9 404 error
 -------------------------*/
 
@@ -4977,7 +4978,7 @@ Vertical Timeline - by CodyHouse.co
 }
 
 
-/*----------------------- 
+/*-----------------------
 6.9 Calendar
 -------------------------*/
 
@@ -5028,7 +5029,7 @@ Vertical Timeline - by CodyHouse.co
 }
 
 
-/*----------------------- 
+/*-----------------------
 6.10 Metrics
 -------------------------*/
 
@@ -5094,7 +5095,7 @@ Vertical Timeline - by CodyHouse.co
 }
 
 
-/*----------------------- 
+/*-----------------------
 6.11 Media Objects
 -------------------------*/
 
@@ -5299,7 +5300,7 @@ Vertical Timeline - by CodyHouse.co
 }
 
 
-/*----------------------- 
+/*-----------------------
 6.12 Shortable / Nesetable
 -------------------------*/
 
@@ -5397,7 +5398,7 @@ Vertical Timeline - by CodyHouse.co
 }
 
 .dd-handle:hover {
-    color: #5969ff;
+    color: #f82249;
     background: #fff;
 }
 
@@ -5511,7 +5512,7 @@ Vertical Timeline - by CodyHouse.co
 #nestable2 .dd-item>button:before {}
 
 .dd-hover>.dd-handle {
-    background: #5969ff !important;
+    background: #f82249 !important;
 }
 
 
@@ -5600,12 +5601,12 @@ Vertical Timeline - by CodyHouse.co
 }
 
 
-/*----------------------- 
+/*-----------------------
 6.13 404 Error
 -------------------------*/
 
 
-/*----------------------- 
+/*-----------------------
 6.14 Comments Widget
 -------------------------*/
 
@@ -5658,11 +5659,11 @@ Vertical Timeline - by CodyHouse.co
 
 .comment-footer .action-icons a:hover,
 .comment-footer .action-icons a.active {
-    color: #5969ff;
+    color: #f82249;
 }
 
 
-/*----------------------- 
+/*-----------------------
 6.14 mail box widget
 -------------------------*/
 
@@ -5776,7 +5777,7 @@ Vertical Timeline - by CodyHouse.co
 ========================================================================== */
 
 
-/*------------------------ 
+/*------------------------
 7.1  Inbox
 ----------------------------*/
 
@@ -5979,7 +5980,7 @@ Vertical Timeline - by CodyHouse.co
     border-top: 1px solid #e6e6f2;
 }
 
- 
+
 
 .email-filters .be-select-all.custom-checkbox {
     display: inline-block;
@@ -6447,7 +6448,7 @@ Vertical Timeline - by CodyHouse.co
     padding-top: 1rem;
     border-top: 1px solid #E9EEF2;
     background: #efeff6;
-    
+
 }
 
 .chat-form {
@@ -6717,10 +6718,10 @@ form.dropzone {
     display: flex;
     align-items: center;
 }
- 
+
 
 /* ==========================================================================
-9. Map 
+9. Map
 ========================================================================== */
 
 
@@ -6781,7 +6782,7 @@ Media Query
         border-bottom: 1px solid #dee2e6;
         border-right: transparent !important;
     }
-     
+
 
 }
 
@@ -6973,12 +6974,12 @@ Media Query
 }
 
 
- 
- 
+
+
 
 
 }
 
 
 /* Custom, iPhone Retina */
-@media only screen and (max-width:320px) {} 
+@media only screen and (max-width:320px) {}
