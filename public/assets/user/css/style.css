@@ -469,7 +469,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #intro {
   width: 100%;
   height: 100vh;
-  background: url(../img/venue-gallery/1.jpg) top center;
+  background: url(../../img/venue-gallery/1.jpg) top center;
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -655,7 +655,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------------------------------------*/
 
 #about {
-  background: url("../img/about-bg.jpg");
+  background: url("../../img/about-bg.jpg");
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -908,7 +908,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #venue .venue-info {
-  background: url("../img/venue-gallery/13.jpg") top center no-repeat;
+  background: url("../../img/venue-gallery/13.jpg") top center no-repeat;
   background-size: cover;
   position: relative;
   padding-top: 60px;
@@ -956,7 +956,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 /*--------------------------------------------------------------
-# Hotels Section
+# Events Section
 --------------------------------------------------------------*/
 
 #event {
@@ -1030,45 +1030,45 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------------------------------------*/
 
 #gallery {
-  padding: 60px;
-  overflow: hidden;
+    padding: 60px;
+    /* overflow: hidden; */
 }
 
 #gallery .owl-nav,
 #gallery .owl-dots {
-  margin-top: 25px;
-  text-align: center;
+    margin-top: 25px;
+    text-align: center;
 }
 
 #gallery .owl-item {
-  border-left: 2px solid #fff;
-  border-right: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
 }
 
 #gallery .owl-dot {
-  display: inline-block;
-  margin: 0 5px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #ddd;
+    display: inline-block;
+    margin: 0 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
 }
 
 #gallery .owl-dot.active {
-  background-color: #f82249;
+    background-color: #f82249;
 }
 
 #gallery .gallery-carousel .owl-stage-outer {
-  overflow: visible;
+    overflow: visible;
 }
 
 #gallery .gallery-carousel .center {
-  border: 6px solid #f82249;
-  margin: -10px;
-  box-sizing: content-box;
-  padding: 4px;
-  background: #fff;
-  z-index: 1;
+    border: 6px solid #f82249;
+    margin: -10px;
+    box-sizing: content-box;
+    padding: 4px;
+    background: #fff;
+    z-index: 1;
 }
 
 /*--------------------------------------------------------------
@@ -1169,7 +1169,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #subscribe {
   padding: 60px;
-  background: url(../img/subscribe-bg.jpg) center center no-repeat;
+  background: url(../../img/venue-gallery/13.jpg) center center no-repeat;
   background-size: cover;
   overflow: hidden;
   position: relative;
