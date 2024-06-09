@@ -36,7 +36,7 @@
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-right-top">
                         <div class="d-flex admin-box align-items-center justify-content-center">
-                            <p style="font-size: 1.2rem; margin-right:10px; color:black;">{{ Auth::user()->name }}</p>
+                            <p style="font-size: 1.1rem; margin-right:10px; color:black;">{{ Auth::user()->name }}</p>
                         </div>
                         <li class="nav-item dropdown nav-user">
                             <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('assets/img/user.png') }}" alt="" class="user-avatar-lg rounded-circle"></a>
@@ -72,7 +72,7 @@
                                 <a class="nav-link" href="{{ route('dashboard') }}" aria-expanded="false"><i class="fab fa-microsoft"></i>Dashboard</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="{{ route('dashboard') }}" aria-expanded="false"><i class="far fa-star"></i>Acara</a>
+                                <a class="nav-link" href="{{ route('event') }}" aria-expanded="false"><i class="far fa-star"></i>Acara</a>
                             </li>
                             <li class="nav-item ">
                                 <a class="nav-link" href="{{ route('dashboard') }}" aria-expanded="false"><i class="far fa-gem"></i>Tiket</a>
@@ -90,12 +90,40 @@
         </div>
         <!-- end left sidebar -->
 
-        <!-- content wrapper  -->
-        {{ $slot }}
+        <!-- wrapper  -->
+        <div class="dashboard-wrapper">
+            <div class="container-fluid dashboard-content">
+                <!-- pageheader -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            @php
+                                $currentPath = Request::path();
+                                $firstSegment = explode('/', $currentPath)[0];
+                            @endphp
+                            <h2 class="pageheader-title">{{ $firstSegment }}</h2>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item active"><a href="/dashboard" class="breadcrumb-link">{{ Request::path() }}</a></li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end pageheader -->
+
+                <!-- content -->
+                {{ $slot }}
+                <!-- end content -->
+            </div>
+        </div>
         <!-- end wrapper  -->
 
     </main>
     <!-- end main wrapper  -->
+
     <!-- Optional JavaScript -->
     <!-- jquery 3.3.1 -->
     <script src="{{ asset('assets/admin/vendor/jquery/jquery-3.3.1.min.js') }}"></script>

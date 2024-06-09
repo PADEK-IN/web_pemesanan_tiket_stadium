@@ -1640,7 +1640,7 @@ Left Navigation Sidebar
 
 .nav-left-sidebar {
     position: fixed;
-    width: 250px;
+    width: 264px;
     height: 100%;
     top: 60px;
     overflow: auto;
@@ -2008,6 +2008,7 @@ Pageheader
 
 .page-breadcrumb .breadcrumb-link {
     color: #a6a6b7;
+    text-transform: capitalize;
 }
 
 .page-breadcrumb .breadcrumb-link:hover {
@@ -2044,6 +2045,7 @@ Pageheader
 .pageheader-title {
     font-size: 24px;
     margin-bottom: 8px;
+    text-transform: capitalize;
 }
 
 .pageheader-text {
@@ -5280,8 +5282,8 @@ Vertical Timeline - by CodyHouse.co
 }
 
 .user-avatar-lg {
-    height: 48px;
-    width: 48px;
+    height: 40px;
+    width: 40px;
 }
 
 .user-avatar-md {
