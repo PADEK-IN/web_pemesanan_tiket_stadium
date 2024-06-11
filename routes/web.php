@@ -7,30 +7,50 @@ Route::get('/', function () {
     return view('pages.welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('pages.admin.dashboard.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::get('/event', function () {
-    return view('pages.admin.events.list');
-})->middleware(['auth', 'verified'])->name('event');
-
-Route::get('/ticket', function () {
-    return view('pages.admin.tickets.list');
-})->middleware(['auth', 'verified'])->name('ticket');
-
-Route::get('/transaction', function () {
-    return view('pages.admin.transactions.list');
-})->middleware(['auth', 'verified'])->name('transaction');
-
-Route::get('/user', function () {
-    return view('pages.admin.users.list');
-})->middleware(['auth', 'verified'])->name('user');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::middleware(["auth", "verified"])->group(function (){
+
+    Route::get('/dashboard', function () {
+        return view('pages.user.dashboard.index');
+    })->name('dashboard');
+
+    Route::get('/event', function () {
+        return view('pages.user.events.list');
+    })->name('event');
+
+    Route::get('/ticket', function () {
+        return view('pages.user.tickets.list');
+    })->name('ticket');
+
+});
+
+Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
+
+    Route::get('/dashboard', function () {
+        return view('pages.admin.dashboard.index');
+    })->name('admin.dashboard');
+
+    Route::get('/event', function () {
+        return view('pages.admin.events.list');
+    })->name('admin.event');
+
+    Route::get('/ticket', function () {
+        return view('pages.admin.tickets.list');
+    })->name('admin.ticket');
+
+    Route::get('/transaction', function () {
+        return view('pages.admin.transactions.list');
+    })->name('admin.transaction');
+
+    Route::get('/user', function () {
+        return view('pages.admin.users.list');
+    })->name('admin.user');
+
 });
 
 require __DIR__.'/auth.php';
