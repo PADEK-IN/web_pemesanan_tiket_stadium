@@ -28,7 +28,7 @@
         <!-- navbar -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="{{ route('dashboard') }}"><img src="{{ asset('assets/img/logo2.png') }}" width="170px" alt="Logo"></a>
+                <a class="navbar-brand" href="{{ route('admin.dashboard') }}"><img src="{{ asset('assets/img/logo2.png') }}" width="170px" alt="Logo"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -68,19 +68,19 @@
                                 Menu
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="{{ route('dashboard') }}" aria-expanded="false"><i class="fab fa-microsoft"></i>Dashboard</a>
+                                <a class="nav-link" href="{{ route('admin.dashboard') }}" aria-expanded="false"><i class="fab fa-microsoft"></i>Dashboard</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="{{ route('event') }}" aria-expanded="false"><i class="far fa-star"></i>Acara</a>
+                                <a class="nav-link" href="{{ route('admin.event') }}" aria-expanded="false"><i class="far fa-star"></i>Acara</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="{{ route('ticket') }}" aria-expanded="false"><i class="far fa-gem"></i>Tiket</a>
+                                <a class="nav-link" href="{{ route('admin.ticket') }}" aria-expanded="false"><i class="far fa-gem"></i>Tiket</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="{{ route('transaction') }}" aria-expanded="false"><i class="far fa-money-bill-alt"></i>Transaksi</a>
+                                <a class="nav-link" href="{{ route('admin.transaction') }}" aria-expanded="false"><i class="far fa-money-bill-alt"></i>Transaksi</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="{{ route('user') }}" aria-expanded="false"><i class="fa fa-fw fa-user-circle"></i>User</a>
+                                <a class="nav-link" href="{{ route('admin.user') }}" aria-expanded="false"><i class="fa fa-fw fa-user-circle"></i>User</a>
                             </li>
                         </ul>
                     </div>
@@ -104,7 +104,7 @@
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item active"><a href="/dashboard" class="breadcrumb-link">{{ Request::path() }}</a></li>
+                                        <li class="breadcrumb-item active"><a href="/admin/dashboard" class="breadcrumb-link">{{ Request::path() }}</a></li>
                                     </ol>
                                 </nav>
                             </div>

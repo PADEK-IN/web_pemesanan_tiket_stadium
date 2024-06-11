@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-layout>
     <div class="card">
         <h5 class="card-header">Semua Data Transaksi</h5>
         <div class="card-body">
@@ -47,4 +47,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-admin-layout>

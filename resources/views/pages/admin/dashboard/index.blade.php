@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-layout>
     <div class="row">
         <!-- four widgets   -->
         <!-- total views   -->
@@ -63,4 +63,4 @@
         <!-- end total earned   -->
 
     </div>
-</x-app-layout>
+</x-admin-layout>
