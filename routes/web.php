@@ -3,20 +3,16 @@
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
-use App\Models\Event;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
+// Guest Routes
 Route::get('/', function () {
     return view('pages.welcome');
 });
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
 
+
+// User Routes
 Route::middleware(["auth", "verified"])->group(function (){
 
     Route::get('/dashboard', function () {
@@ -31,8 +27,13 @@ Route::middleware(["auth", "verified"])->group(function (){
         return view('pages.user.tickets.list');
     })->name('ticket');
 
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
 });
 
+// Admin Routes
 Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
 
     Route::get('/dashboard', function () {
@@ -50,6 +51,10 @@ Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
     })->name('admin.transaction');
 
     Route::get('/user', [UserController::class, 'getAllData'])->name('admin.user');
+
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 });
 
