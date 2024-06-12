@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('title', 50);
             $table->text('description');
             $table->string('image', 150)->default('assets/img/blank.jpg');
