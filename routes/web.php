@@ -10,8 +10,6 @@ Route::get('/', function () {
     return view('pages.welcome');
 });
 
-
-
 // User Routes
 Route::middleware(["auth", "verified"])->group(function (){
 
