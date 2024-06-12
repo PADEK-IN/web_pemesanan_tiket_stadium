@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TicketController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,9 +41,7 @@ Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
 
     Route::get('/event', [EventController::class, 'getAllData'])->name('admin.event');
 
-    Route::get('/ticket', function () {
-        return view('pages.admin.tickets.list');
-    })->name('admin.ticket');
+    Route::get('/ticket', [TicketController::class, 'getAllData'])->name('admin.ticket');
 
     Route::get('/transaction', function () {
         return view('pages.admin.transactions.list');
