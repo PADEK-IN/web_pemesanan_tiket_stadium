@@ -3,7 +3,7 @@
         <h5 class="card-header">Semua Data Tiket</h5>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="ticket-list" class="table table-striped table-bordered my-3">
+                <table id="event-list" class="table table-striped table-bordered my-3">
                     <thead>
                         <tr>
                             <th class="text-center px-2" >No</th>
