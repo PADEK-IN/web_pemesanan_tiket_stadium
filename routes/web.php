@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\Event;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -37,7 +38,7 @@ Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
     })->name('admin.dashboard');
 
     Route::get('/event', function () {
-        return view('pages.admin.events.list');
+        return view('pages.admin.events.list', ['events'=>Event::all()]);
     })->name('admin.event');
 
     Route::get('/ticket', function () {

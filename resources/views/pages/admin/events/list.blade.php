@@ -16,21 +16,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @for ($i = 1; $i <= 15; $i++)
+                        @foreach ($events as $index => $event)
                         <tr>
-                            <td class="text-center" >{{ $i }}</td>
-                            <td class="text-justify">Festival Budaya Palembang</td>
-                            <td class="text-justify">Festival masyarakat setiap 6 bulan sekali</td>
-                            <td class="text-center">15/06/2024</td>
-                            <td class="text-center">08:00</td>
-                            <td class="text-center">Soon</td>
+                            <td class="text-center" >{{ $index + 1 }}</td>
+                            <td class="text-justify">{{ $event['title'] }}</td>
+                            <td class="text-justify">{{ $event['description'] }}</td>
+                            <td class="text-center">{{ $event['date'] }}</td>
+                            <td class="text-center">{{ $event['time'] }}</td>
+                            <td class="text-center">{{ $event['isActive']?"Aktif":"Selesai" }}</td>
                             <td class="text-center" style="padding: 0">
                                 <a href="#" class="mr-2">Edit</a>
                                 <span>|</span>
                                 <a href="#" class="ml-2">Delete</a>
                             </td>
                         </tr>
-                        @endfor
+                        @endforeach
                     </tbody>
                     <tfoot>
                         <tr>
