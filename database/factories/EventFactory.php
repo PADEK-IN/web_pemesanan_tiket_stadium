@@ -19,9 +19,9 @@ class EventFactory extends Factory
         return [
             'title' => fake()->jobTitle(),
             'description' => fake()->paragraph(),
-            'image' => fake()->image(),
-            'date' => fake()->date(),
-            'time' => fake()->time(),
+            'image' => fake()->image("C:\laragon\www\myproject\web_pemesanan_tiket_stadium\public\assets\img\uploads",640,480,null,false),
+            'date' => fake()->dateTimeBetween("now", "+3 months")->format('Y-m-d'),
+            'time' => fake()->time("H:i"),
         ];
     }
 }
