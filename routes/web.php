@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use App\Models\Event;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -49,9 +50,7 @@ Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
         return view('pages.admin.transactions.list');
     })->name('admin.transaction');
 
-    Route::get('/user', function () {
-        return view('pages.admin.users.list', ['users' => User::all()]);
-    })->name('admin.user');
+    Route::get('/user', [UserController::class, 'getAllData'])->name('admin.user');
 
 });
 
