@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Models\Event;
@@ -38,9 +39,7 @@ Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
         return view('pages.admin.dashboard.index');
     })->name('admin.dashboard');
 
-    Route::get('/event', function () {
-        return view('pages.admin.events.list', ['events'=>Event::all()]);
-    })->name('admin.event');
+    Route::get('/event', [EventController::class, 'getAllData'])->name('admin.event');
 
     Route::get('/ticket', function () {
         return view('pages.admin.tickets.list');
