@@ -17,8 +17,8 @@ class EventFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->jobTitle(),
-            'description' => fake()->sentence(4),
+            'title' => fake()->sentence(4),
+            'description' => fake()->sentence(10),
             'image' => fake()->image("C:\laragon\www\myproject\web_pemesanan_tiket_stadium\public\assets\img\uploads",640,480,null,false),
             'date' => fake()->dateTimeBetween("now", "+3 months")->format('Y-m-d'),
             'time' => fake()->time("H:i"),
