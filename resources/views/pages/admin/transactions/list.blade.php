@@ -7,38 +7,41 @@
                     <thead>
                         <tr>
                             <th class="text-center px-2" >No</th>
-                            <th class="text-center">Judul</th>
-                            <th class="text-center">Deskripsi</th>
-                            <th class="text-center">Tanggal</th>
-                            <th class="text-center">Waktu</th>
+                            <th class="text-center">Nama Pengguna</th>
+                            <th class="text-center">Id Ticket</th>
+                            <th class="text-center">Tipe Tiket</th>
+                            <th class="text-center">Bukti Bayar</th>
+                            <th class="text-center">Tanggal Bayar</th>
                             <th class="text-center">Status</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @for ($i = 1; $i <= 15; $i++)
+                        @foreach ($transactions as $index => $transaction)
                         <tr>
-                            <td class="text-center" >{{ $i }}</td>
-                            <td class="text-justify">Festival Budaya Palembang</td>
-                            <td class="text-justify">Festival masyarakat setiap 6 bulan sekali</td>
-                            <td class="text-center">15/06/2024</td>
-                            <td class="text-center">08:00</td>
-                            <td class="text-center">Soon</td>
+                            <td class="text-center" >{{ $index + 1 }}</td>
+                            <td class="text-justify">{{ $transaction->userData->name }}</td>
+                            <td class="text-justify">{{ $transaction->ticketData->id }}</td>
+                            <td class="text-center">{{ $transaction->ticketData->ticket_type }}</td>
+                            <td class="text-center"><img src="assets/img/uploads/{{ $transaction->proof }}" alt=bukti_bayar"></td>
+                            <td class="text-center">{{ $transaction->date }}</td>
+                            <td class="text-center">{{ $transaction->idValid ? 'Valid' : 'Tidak Valid' }}</td>
                             <td class="text-center" style="padding: 0">
                                 <a href="#" class="mr-2">Edit</a>
                                 <span>|</span>
                                 <a href="#" class="ml-2">Delete</a>
                             </td>
                         </tr>
-                        @endfor
+                        @endforeach
                     </tbody>
                     <tfoot>
                         <tr>
                             <th class="text-center">No</th>
-                            <th class="text-center">Judul</th>
-                            <th class="text-center">Deskripsi</th>
-                            <th class="text-center">Tanggal</th>
-                            <th class="text-center">Waktu</th>
+                            <th class="text-center">Nama Pengguna</th>
+                            <th class="text-center">Id Ticket</th>
+                            <th class="text-center">Tipe Tiket</th>
+                            <th class="text-center">Bukti Bayar</th>
+                            <th class="text-center">Tanggal Bayar</th>
                             <th class="text-center">Status</th>
                             <th class="text-center">Aksi</th>
                         </tr>

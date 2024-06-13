@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tickets', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->foreignId('id_event')->constrained(table: 'events', indexName:'tickets_id_event');
             $table->enum('ticket_type', ['reguler', 'vip']);
             $table->decimal('price',10,2);
