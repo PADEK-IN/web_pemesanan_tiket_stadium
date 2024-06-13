@@ -19,9 +19,9 @@
                         <tr>
                             <td class="text-center" >{{ $index + 1 }}</td>
                             <td class="text-justify">{{ $ticket->eventData->title }}</td>
-                            <td class="text-justify">{{ $ticket['ticket_type'] }}</td>
-                            <td class="text-justify">{{ $ticket['price'] }}</td>
-                            <td class="text-justify">{{ $ticket['quantity'] }}</td>
+                            <td class="text-center">{{ $ticket['ticket_type'] }}</td>
+                            <td class="text-center">{{ $ticket['price'] }}</td>
+                            <td class="text-center">{{ $ticket['quantity'] }}</td>
                             <td class="text-center" style="padding: 0">
                                 <a href="#" class="mr-2">Edit</a>
                                 <span>|</span>
