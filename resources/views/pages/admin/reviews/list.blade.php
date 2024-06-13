@@ -22,8 +22,8 @@
                             <td class="text-left">{{ $review->userData->name }}</td>
                             <td class="text-center">{{ $review->eventData->title }}</td>
                             <td class="text-center">{{ $review->rating }}</td>
-                            <td class="text-justify">{{ $review->comment }}</td>
-                            <td class="text-center">{{ $review->created_at }}</td>
+                            <td class="text-justify">{{ Str::limit($review->comment, 50) }}</td>
+                            <td class="text-center">{{ $review->created_at->diffForHumans() }}</td>
                             <td class="text-center" style="padding: 0">
                                 <a href="#" class="mr-2">Edit</a>
                                 <span>|</span>

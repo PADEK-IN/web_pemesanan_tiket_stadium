@@ -20,7 +20,7 @@
                         <tr>
                             <td class="text-center" >{{ $index + 1 }}</td>
                             <td class="text-justify">{{ $event['title'] }}</td>
-                            <td class="text-justify">{{ $event['description'] }}</td>
+                            <td class="text-justify">{{ Str::limit($event['description'], 50) }}</td>
                             <td class="text-center">{{ $event['date'] }}</td>
                             <td class="text-center">{{ $event['time'] }}</td>
                             <td class="text-center">{{ $event['isActive']?"Aktif":"Selesai" }}</td>
