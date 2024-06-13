@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\EventController;
+use App\Http\Controllers\admin\IndexController;
 use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\ReviewController;
 use App\Http\Controllers\admin\TicketController;
@@ -37,9 +38,7 @@ Route::middleware(["auth", "verified"])->group(function (){
 // Admin Routes
 Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
 
-    Route::get('/dashboard', function () {
-        return view('pages.admin.dashboard.index');
-    })->name('admin.dashboard');
+    Route::get('/dashboard', [IndexController::class, 'index'])->name('admin.dashboard');
 
     Route::get('/event', [EventController::class, 'getAllData'])->name('admin.event');
 
