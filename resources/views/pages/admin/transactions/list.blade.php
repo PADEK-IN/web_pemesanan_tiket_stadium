@@ -21,7 +21,7 @@
                         <tr>
                             <td class="text-center" >{{ $index + 1 }}</td>
                             <td class="text-justify">{{ $transaction->userData->name }}</td>
-                            <td class="text-center">{{ $transaction->ticketData->id }}</td>
+                            <td class="text-center">{{ $transaction->ticketData->hashid }}</td>
                             <td class="text-center">{{ $transaction->ticketData->ticket_type }}</td>
                             <td class="text-center"><img src="assets/img/uploads/{{ $transaction->proof }}" alt=bukti_bayar" width="25px"></td>
                             <td class="text-center">{{ $transaction->date }}</td>

@@ -7,10 +7,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Vinkla\Hashids\Facades\Hashids;
 
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
+
+    public function getHashidAttribute()
+    {
+        return Hashids::encode($this->id);
+    }
 
     /**
      * The attributes that are mass assignable.
