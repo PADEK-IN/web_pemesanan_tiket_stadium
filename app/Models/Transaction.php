@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Vinkla\Hashids\Facades\Hashids;
 
-class Event extends Model
+class Transaction extends Model
 {
     use HasFactory;
 
@@ -16,13 +16,13 @@ class Event extends Model
         return Hashids::encode($this->id);
     }
 
-    public function eventTicket(): HasMany
+    public function userData(): BelongsTo
     {
-        return $this->hasMany(Ticket::class, 'id_event');
+        return $this->belongsTo(User::class, 'id_user');
     }
 
-    public function eventReview(): HasMany
+    public function ticketData(): BelongsTo
     {
-        return $this->hasMany(Review::class, 'id_event');
+        return $this->belongsTo(Ticket::class, 'id_ticket');
     }
 }

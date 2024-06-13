@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('tickets', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 50);
-            $table->text('description');
-            $table->string('image', 150)->default('assets/img/blank.jpg');
-            $table->date('date');
-            $table->time('time');
-            $table->boolean('isActive')->default(true);
+            $table->foreignId('id_event')->constrained(table: 'events', indexName:'tickets_id_event');
+            $table->enum('ticket_type', ['reguler', 'vip']);
+            $table->decimal('price',10,2);
+            $table->integer('quantity');
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('tickets');
     }
 };

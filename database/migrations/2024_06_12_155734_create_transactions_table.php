@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 50);
-            $table->text('description');
-            $table->string('image', 150)->default('assets/img/blank.jpg');
+            $table->foreignId('id_user')->constrained(table:'users',indexName:'transaction_id_user');
+            $table->foreignId('id_ticket')->constrained(table:'tickets',indexName:'transaction_id_ticket');
             $table->date('date');
-            $table->time('time');
-            $table->boolean('isActive')->default(true);
+            $table->string('proof', 150)->default('assets/img/blank.jpg');
+            $table->boolean('isValid')->default(false);
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('transactions');
     }
 };

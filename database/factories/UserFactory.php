@@ -29,8 +29,7 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'name' => fake()->name("male"),
             'gender' => "male",
-            'phone' => "08".strval(fake()->randomNumber(10)),
-            'remember_token' => Str::random(10),
+            'phone' => fake()->e164PhoneNumber(),
         ];
     }
 

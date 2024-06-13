@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 50);
-            $table->text('description');
-            $table->string('image', 150)->default('assets/img/blank.jpg');
-            $table->date('date');
-            $table->time('time');
-            $table->boolean('isActive')->default(true);
+            $table->foreignId('id_event')->constrained(table:'events', indexName:'review_id_event');
+            $table->foreignId('id_user')->constrained(table:'users',column:'id', indexName:'review_id_user');
+            $table->smallInteger('rating');
+            $table->text('comment');
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('reviews');
     }
 };

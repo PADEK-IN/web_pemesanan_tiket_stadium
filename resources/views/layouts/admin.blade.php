@@ -80,6 +80,9 @@
                                 <a class="nav-link" href="{{ route('admin.transaction') }}" aria-expanded="false"><i class="far fa-money-bill-alt"></i>Transaksi</a>
                             </li>
                             <li class="nav-item ">
+                                <a class="nav-link" href="{{ route('admin.review') }}" aria-expanded="false"><i class="far fa-comments"></i>Tanggapan</a>
+                            </li>
+                            <li class="nav-item ">
                                 <a class="nav-link" href="{{ route('admin.user') }}" aria-expanded="false"><i class="fa fa-fw fa-user-circle"></i>User</a>
                             </li>
                         </ul>
