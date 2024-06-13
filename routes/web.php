@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\EventController;
 use App\Http\Controllers\admin\ProfileController;
+use App\Http\Controllers\admin\ReviewController;
 use App\Http\Controllers\admin\TicketController;
 use App\Http\Controllers\admin\TransactionController;
 use App\Http\Controllers\admin\UserController;
@@ -45,6 +46,8 @@ Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
     Route::get('/ticket', [TicketController::class, 'getAllData'])->name('admin.ticket');
 
     Route::get('/transaction', [TransactionController::class, 'getAllData'])->name('admin.transaction');
+
+    Route::get('/review', [ReviewController::class, 'getAllData'])->name('admin.review');
 
     Route::get('/user', [UserController::class, 'getAllData'])->name('admin.user');
 

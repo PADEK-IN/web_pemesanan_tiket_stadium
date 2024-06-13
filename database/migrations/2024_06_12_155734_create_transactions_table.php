@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_user')->constrained(table:'users',indexName:'users_id_user');
-            $table->foreignId('id_ticket')->constrained(table:'tickets',indexName:'tickets_id_ticket');
+            $table->foreignId('id_user')->constrained(table:'users',indexName:'transaction_id_user');
+            $table->foreignId('id_ticket')->constrained(table:'tickets',indexName:'transaction_id_ticket');
             $table->date('date');
             $table->string('proof', 150)->default('assets/img/blank.jpg');
             $table->boolean('isValid')->default(false);

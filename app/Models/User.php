@@ -56,7 +56,12 @@ class User extends Authenticatable
 
     public function userTransaction(): HasMany
     {
-        return $this->hasMany(Ticket::class, 'id_user');
+        return $this->hasMany(Transaction::class, 'id_user');
+    }
+
+    public function userReview(): HasMany
+    {
+        return $this->hasMany(Review::class, 'id_user');
     }
 
 }
