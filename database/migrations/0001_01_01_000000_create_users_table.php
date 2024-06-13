@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('name', 50);
             $table->enum('gender', ['female', 'male']);
-            $table->string('phone', 15);
+            $table->string('phone', 17);
             $table->string('image', 150)->default('assets/img/user.png');
             $table->enum('role', ['user', 'admin'])->default('user');
             $table->rememberToken();
