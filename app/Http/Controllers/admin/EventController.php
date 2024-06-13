@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use Illuminate\Routing\Controller;
 use App\Models\Event;
 use Illuminate\View\View;
 use Illuminate\Http\Request;

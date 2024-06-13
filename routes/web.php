@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\EventController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\TicketController;
-use App\Http\Controllers\TransactionController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\admin\EventController;
+use App\Http\Controllers\admin\ProfileController;
+use App\Http\Controllers\admin\TicketController;
+use App\Http\Controllers\admin\TransactionController;
+use App\Http\Controllers\admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 // Guest Routes

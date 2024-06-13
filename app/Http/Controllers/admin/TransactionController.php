@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
-use App\Models\Ticket;
+use Illuminate\Routing\Controller;
 use App\Models\Transaction;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
