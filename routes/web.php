@@ -7,6 +7,10 @@ use App\Http\Controllers\admin\ReviewController;
 use App\Http\Controllers\admin\TicketController;
 use App\Http\Controllers\admin\TransactionController;
 use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\user\UserEventController;
+use App\Http\Controllers\user\UserIndexController;
+use App\Http\Controllers\user\UserProfileController;
+use App\Http\Controllers\user\UserTicketController;
 use Illuminate\Support\Facades\Route;
 
 // Guest Routes
@@ -17,21 +21,15 @@ Route::get('/', function () {
 // User Routes
 Route::middleware(["auth", "verified"])->group(function (){
 
-    Route::get('/dashboard', function () {
-        return view('pages.user.dashboard.index');
-    })->name('dashboard');
+    Route::get('/dashboard', [UserIndexController::class, 'index'])->name('dashboard');
 
-    Route::get('/event', function () {
-        return view('pages.user.events.list');
-    })->name('event');
+    Route::get('/event', [UserEventController::class, 'getAllData'])->name('event');
 
-    Route::get('/ticket', function () {
-        return view('pages.user.tickets.list');
-    })->name('ticket');
+    Route::get('/ticket', [UserTicketController::class, 'getAllData'])->name('ticket');
 
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile', [UserProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [UserProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [UserProfileController::class, 'destroy'])->name('profile.destroy');
 
 });
 
@@ -55,9 +53,9 @@ Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
 
     Route::get('/user', [UserController::class, 'getAllData'])->name('admin.user');
 
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('admin.profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('admin.profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('admin.profile.destroy');
 
 });
 

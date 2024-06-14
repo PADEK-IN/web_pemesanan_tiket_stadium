@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\user;
 
 use Illuminate\View\View;
 use Illuminate\Http\Request;
@@ -10,14 +10,14 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\ProfileUpdateRequest;
 
-class ProfileController extends Controller
+class UserProfileController extends Controller
 {
     /**
      * Display the user's profile form.
      */
     public function edit(Request $request): View
     {
-        return view('pages.admin.profile.edit', [
+        return view('pages.user.profile.edit', [
             'user' => $request->user(),
         ]);
     }
@@ -35,7 +35,7 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('admin.profile.edit')->with('status', 'profile-updated');
+        return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
     /**

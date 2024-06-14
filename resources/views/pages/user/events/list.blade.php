@@ -1,6 +1,18 @@
 <x-user-layout>
     <div class="card">
-        <h5 class="card-header">Semua Data Acara</h5>
+        <!-- Success Message -->
+        @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        @endif
+        <div class="d-flex justify-content-between m-2">
+            <h5 class="card-header">Semua Data Acara</h5>
+            <a href="{{ route('admin.event.create') }}" class="btn btn-space btn-primary">Create Event</a>
+        </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table id="event-list" class="table table-striped table-bordered my-3">
@@ -16,21 +28,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @for ($i = 1; $i <= 15; $i++)
+                        @foreach ($events as $index => $event)
                         <tr>
-                            <td class="text-center" >{{ $i }}</td>
-                            <td class="text-justify">Festival Budaya Palembang</td>
-                            <td class="text-justify">Festival masyarakat setiap 6 bulan sekali</td>
-                            <td class="text-center">15/06/2024</td>
-                            <td class="text-center">08:00</td>
-                            <td class="text-center">Soon</td>
+                            <td class="text-center" >{{ $index + 1 }}</td>
+                            <td class="text-justify"><a href="/admin/event/{{ $event['id'] }}">{{ $event['title'] }}</a></td>
+                            <td class="text-justify">{{ Str::limit($event['description'], 50) }}</td>
+                            <td class="text-center">{{ $event['date'] }}</td>
+                            <td class="text-center">{{ $event['time'] }}</td>
+                            <td class="text-center">{{ $event['isActive']?"Aktif":"Selesai" }}</td>
                             <td class="text-center" style="padding: 0">
                                 <a href="#" class="mr-2">Edit</a>
                                 <span>|</span>
                                 <a href="#" class="ml-2">Delete</a>
                             </td>
                         </tr>
-                        @endfor
+                        @endforeach
                     </tbody>
                     <tfoot>
                         <tr>
