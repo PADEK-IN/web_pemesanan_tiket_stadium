@@ -11,6 +11,8 @@ class Event extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['title', 'description', 'date', 'time'];
+
     public function getHashidAttribute()
     {
         return Hashids::encode($this->id);

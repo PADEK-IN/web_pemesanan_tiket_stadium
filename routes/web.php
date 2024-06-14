@@ -41,6 +41,8 @@ Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
     Route::get('/dashboard', [IndexController::class, 'index'])->name('admin.dashboard');
 
     Route::get('/event', [EventController::class, 'getAllData'])->name('admin.event');
+    Route::get('/event/create', [EventController::class, 'getCreatePage'])->name('admin.event.create');
+    Route::post('/event/create', [EventController::class, 'create'])->name('admin.event.create');
 
     Route::get('/ticket', [TicketController::class, 'getAllData'])->name('admin.ticket');
 
