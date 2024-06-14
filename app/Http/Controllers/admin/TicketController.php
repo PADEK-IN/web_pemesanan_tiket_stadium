@@ -53,7 +53,7 @@ class TicketController extends Controller
         }
 
         // Redirect to a named route
-        return redirect()->route('admin.ticket')->with('success', 'Event created successfully.');
+        return redirect()->route('admin.ticket')->with('success', 'Ticket created successfully.');
     }
 
 }

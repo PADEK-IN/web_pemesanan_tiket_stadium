@@ -47,7 +47,7 @@ Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
 
     Route::get('/ticket', [TicketController::class, 'getAllData'])->name('admin.ticket');
     Route::get('/ticket/create', [TicketController::class, 'getCreatePage'])->name('admin.ticket.create');
-    Route::post('/ticket/create', [TicketController::class, 'create'])->name('admin.ticket.create');;
+    Route::post('/ticket/create', [TicketController::class, 'create'])->name('admin.ticket.create');
 
     Route::get('/transaction', [TransactionController::class, 'getAllData'])->name('admin.transaction');
 
