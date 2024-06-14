@@ -21,6 +21,20 @@ class EventController extends Controller
         return view('pages.admin.events.create');
     }
 
+    public function show($id): View
+    {
+        // Find the event by ID
+        $event = Event::find($id);
+
+        // Check if the event exists
+        if (!$event) {
+            return redirect()->route('admin.event')->with('error', 'Event not found.');
+        }
+
+        // Return a view with the event data
+        return view('pages.admin.events.detail', compact('event'));
+    }
+
     public function create(Request $request): RedirectResponse
     {
         // $event = new Event;
@@ -76,18 +90,5 @@ class EventController extends Controller
         return redirect()->route('admin.event')->with('success', 'Event created successfully.');
     }
 
-    public function show($id): View
-    {
-        // Find the event by ID
-        $event = Event::find($id);
-
-        // Check if the event exists
-        if (!$event) {
-            return redirect()->route('admin.event')->with('error', 'Event not found.');
-        }
-
-        // Return a view with the event data
-        return view('pages.admin.events.detail', compact('event'));
-    }
 
 }
