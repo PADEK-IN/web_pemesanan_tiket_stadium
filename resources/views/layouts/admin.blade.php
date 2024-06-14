@@ -101,7 +101,7 @@
                         <div class="page-header">
                             @php
                                 $currentPath = Request::path();
-                                $firstSegment = explode('/', $currentPath)[0];
+                                $firstSegment = explode('/', $currentPath)[1];
                             @endphp
                             <h2 class="pageheader-title">{{ $firstSegment }}</h2>
                             <div class="page-breadcrumb">
