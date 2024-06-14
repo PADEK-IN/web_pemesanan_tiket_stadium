@@ -11,7 +11,7 @@ class Event extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'date', 'time'];
+    protected $fillable = ['title', 'description', 'date', 'time', 'image'];
 
     public function getHashidAttribute()
     {

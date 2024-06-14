@@ -31,7 +31,7 @@
                         @foreach ($events as $index => $event)
                         <tr>
                             <td class="text-center" >{{ $index + 1 }}</td>
-                            <td class="text-justify">{{ $event['title'] }}</td>
+                            <td class="text-justify"><a href="/admin/event/{{ $event['id'] }}">{{ $event['title'] }}</a></td>
                             <td class="text-justify">{{ Str::limit($event['description'], 50) }}</td>
                             <td class="text-center">{{ $event['date'] }}</td>
                             <td class="text-center">{{ $event['time'] }}</td>

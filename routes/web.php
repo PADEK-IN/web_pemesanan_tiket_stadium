@@ -42,6 +42,7 @@ Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
 
     Route::get('/event', [EventController::class, 'getAllData'])->name('admin.event');
     Route::get('/event/create', [EventController::class, 'getCreatePage'])->name('admin.event.create');
+    Route::get('/event/{id}', [EventController::class, 'show'])->name('admin.event.show');
     Route::post('/event/create', [EventController::class, 'create'])->name('admin.event.create');
 
     Route::get('/ticket', [TicketController::class, 'getAllData'])->name('admin.ticket');

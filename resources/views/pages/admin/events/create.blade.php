@@ -24,7 +24,7 @@
 
         <h3 class="card-header">Acara Baru</h3>
         <div class="card-body">
-            <form action="{{ route('admin.event.create') }}" method="post" id="validationform" data-parsley-validate="" novalidate="">
+            <form action="{{ route('admin.event.create') }}" method="post" id="validationform" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group row">
                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Judul</label>
@@ -50,7 +50,7 @@
                 <div class="form-group row">
                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Gambar Acara</label>
                     <div class="col-12 col-sm-8 col-lg-6">
-                        <input type="file" required="" class="form-control" name="image">
+                        <input type="file" id="image" name="image" class="form-control-file">
                     </div>
                 </div>
                 <div class="form-group row text-right">
