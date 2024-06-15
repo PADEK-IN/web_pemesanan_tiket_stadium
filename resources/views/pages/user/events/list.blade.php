@@ -1,5 +1,5 @@
 <x-user-layout>
-    <div class="card">
+    <div class="bg-white pl-2 py-2">
         <!-- Success Message -->
         @if (session('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -10,53 +10,30 @@
         </div>
         @endif
         <div class="d-flex justify-content-between m-2">
-            <h5 class="card-header">Semua Data Acara</h5>
-            <a href="{{ route('admin.event.create') }}" class="btn btn-space btn-primary">Create Event</a>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table id="event-list" class="table table-striped table-bordered my-3">
-                    <thead>
-                        <tr>
-                            <th class="text-center px-2" >No</th>
-                            <th class="text-center">Judul</th>
-                            <th class="text-center">Deskripsi</th>
-                            <th class="text-center">Tanggal</th>
-                            <th class="text-center">Waktu</th>
-                            <th class="text-center">Status</th>
-                            <th class="text-center">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($events as $index => $event)
-                        <tr>
-                            <td class="text-center" >{{ $index + 1 }}</td>
-                            <td class="text-justify"><a href="/admin/event/{{ $event['id'] }}">{{ $event['title'] }}</a></td>
-                            <td class="text-justify">{{ Str::limit($event['description'], 50) }}</td>
-                            <td class="text-center">{{ $event['date'] }}</td>
-                            <td class="text-center">{{ $event['time'] }}</td>
-                            <td class="text-center">{{ $event['isActive']?"Aktif":"Selesai" }}</td>
-                            <td class="text-center" style="padding: 0">
-                                <a href="#" class="mr-2">Edit</a>
-                                <span>|</span>
-                                <a href="#" class="ml-2">Delete</a>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th class="text-center">No</th>
-                            <th class="text-center">Judul</th>
-                            <th class="text-center">Deskripsi</th>
-                            <th class="text-center">Tanggal</th>
-                            <th class="text-center">Waktu</th>
-                            <th class="text-center">Status</th>
-                            <th class="text-center">Aksi</th>
-                        </tr>
-                    </tfoot>
-                </table>
+            <h4>List Acara</h4>
+            <div class="d-flex">
+                <label for="searchInput" class="mr-2 mt-1">Cari:</label>
+                <input type="text" id="searchInput" placeholder="Search..." class="form-control mb-3">
             </div>
         </div>
+
+        <div id="cardContainer" class="d-flex flex-wrap">
+            @foreach($events as $index => $event)
+            <div class="card card-list m-2" data-title="{{ strtolower($event['title']) }}" data-description="{{ strtolower($event['description']) }}">
+                <div class="card-img-top">
+                    <img class="img-fluid card-img" src="{{ asset($event->image) }}" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title"><a href="/admin/event/{{ $event['id'] }}">{{ $event['title'] }}</a></h3>
+                    <p class="card-text">{{ Str::limit($event['description'], 50) }}</p>
+                    <p class="text-muted">{{ $event['date'] }} | {{ $event['time'] }}</p>
+                    <a href="#" class="btn btn-primary">{{ $event['isActive']?"Pesan Tiket":"Acara Selesai" }}</a>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+        <ul id="pagination" class="pagination justify-content-center mt-3"></ul>
     </div>
+
 </x-user-layout>

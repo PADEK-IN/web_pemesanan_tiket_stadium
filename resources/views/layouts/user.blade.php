@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Favicons -->
     <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
     <link href="{{ asset('assets/img/favicon.png') }}" rel="apple-touch-icon">
@@ -13,12 +14,12 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/bootstrap/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/fonts/circular-std/style.css') }}" >
-    <link rel="stylesheet" href="{{ asset('assets/admin/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/fonts/fontawesome/css/fontawesome-all.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/fonts/flag-icon-css/flag-icon.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/vendor/datatables/css/dataTables.bootstrap4.css') }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/custom.css') }}">
 </head>
 
 <body>
@@ -147,6 +148,63 @@
                     }, 500);
                 });
             }, 2000); // 2 seconds
+        });
+        //pagination and search card event
+        $(document).ready(function() {
+            var pageSize = 6; // Set jumlah card per halaman
+            var pageCount = Math.ceil($("#cardContainer .card").length / pageSize);
+
+            // Add pagination buttons
+            for (var i = 0; i < pageCount; i++) {
+                $("#pagination").append('<li class="page-item"><a href="#" class="page-link">' + (i + 1) + '</a></li>');
+            }
+
+            // Show first set of cards
+            showPage(1);
+
+            // Handle pagination click
+            $("#pagination").on("click", ".page-link", function(e) {
+                e.preventDefault();
+                var pageNum = parseInt($(this).text());
+                showPage(pageNum);
+            });
+
+            function showPage(pageNum) {
+                $("#cardContainer .card").hide();
+                $("#cardContainer .card").slice((pageNum - 1) * pageSize, pageNum * pageSize).show();
+            }
+
+            function updatePagination() {
+                var pageCount = Math.ceil($("#cardContainer .card:visible").length / pageSize);
+                $("#pagination").empty();
+                for (var i = 0; i < pageCount; i++) {
+                    $("#pagination").append('<li class="page-item"><a href="#" class="page-link">' + (i + 1) + '</a></li>');
+                }
+            }
+
+            function showPageSearch(pageNum) {
+                currentPage = pageNum;
+                var cards = $("#cardContainer .card:visible");
+                var start = (pageNum - 1) * pageSize;
+                var end = pageNum * pageSize;
+                cards.hide().slice(start, end).show();
+            }
+
+            $("#searchInput").on("input", function() {
+                var searchTerm = $(this).val().toLowerCase();
+                $("#cardContainer .card").each(function() {
+                    var title = $(this).data("title");
+                    var description = $(this).data("description");
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+                updatePagination();
+                showPageSearch(1);
+            });
+
         });
     </script>
 </body>
