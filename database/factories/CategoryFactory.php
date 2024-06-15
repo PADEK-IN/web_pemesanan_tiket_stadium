@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
  */
-class ReviewFactory extends Factory
+class CategoryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,11 +17,7 @@ class ReviewFactory extends Factory
     public function definition(): array
     {
         return [
-            'id_event' => 1,
-            'id_user' => 1,
-            'rating'=>fake()->numberBetween(1,5),
-            'comment'=>fake()->sentence(15)
+            'name' => fake()->sentence(1),
         ];
     }
-
 }

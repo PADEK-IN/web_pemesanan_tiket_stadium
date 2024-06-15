@@ -48,11 +48,14 @@ class EventController extends Controller
 
         // Validate the incoming request data
         $validator = Validator::make($request->all(), [
-            'title' => 'required|string|max:255',
+            'name' => 'required|string|max:50',
             'description' => 'required|string',
+            'id_category' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // max 2MB
             'date' => 'required|date',
             'time' => 'required|date_format:H:i',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // max 2MB
+            'quota' => 'required|integer',
+            'price' => 'required|integer',
         ]);
 
         if ($validator->fails()) {

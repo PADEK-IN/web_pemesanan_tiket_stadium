@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_user')->constrained(table:'users',indexName:'transaction_id_user');
-            $table->foreignId('id_ticket')->constrained(table:'tickets',indexName:'transaction_id_ticket');
+            $table->foreignId('id_event')->constrained(table:'events',indexName:'transaction_id_event');
             $table->integer('quantity');
             $table->date('date');
             $table->string('proof', 150)->nullable();

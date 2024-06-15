@@ -13,11 +13,14 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 50);
+            $table->string('name', 50);
             $table->text('description');
+            $table->foreignId('id_category')->constrained(table:'categories',indexName:'event_id_category');
             $table->string('image', 150)->default('assets/img/blank.jpg');
             $table->date('date');
             $table->time('time');
+            $table->integer('quota');
+            $table->decimal('price',10,2);
             $table->boolean('isActive')->default(true);
             $table->timestamps();
         });

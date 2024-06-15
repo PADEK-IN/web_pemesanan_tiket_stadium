@@ -21,8 +21,8 @@ class Transaction extends Model
         return $this->belongsTo(User::class, 'id_user');
     }
 
-    public function ticketData(): BelongsTo
+    public function eventData(): BelongsTo
     {
-        return $this->belongsTo(Ticket::class, 'id_ticket');
+        return $this->belongsTo(Event::class, 'id_event');
     }
 }

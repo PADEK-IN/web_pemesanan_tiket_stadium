@@ -2,29 +2,36 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Vinkla\Hashids\Facades\Hashids;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Vinkla\Hashids\Facades\Hashids;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Event extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'date', 'time', 'image'];
+    protected $fillable = ['name', 'description', 'id_category', 'image', 'date', 'time',  'quota', 'price', 'isActive'];
 
     public function getHashidAttribute()
     {
         return Hashids::encode($this->id);
     }
 
-    public function eventTicket(): HasMany
+    public function eventCategory(): BelongsTo
     {
-        return $this->hasMany(Ticket::class, 'id_event');
+        return $this->belongsTo(Category::class, 'id_category');
+    }
+
+    public function eventTransaction(): HasMany
+    {
+        return $this->hasMany(Transaction::class, 'id_event');
     }
 
     public function eventReview(): HasMany
     {
         return $this->hasMany(Review::class, 'id_event');
     }
+
 }
