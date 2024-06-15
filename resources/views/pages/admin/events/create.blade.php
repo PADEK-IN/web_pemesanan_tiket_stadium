@@ -27,9 +27,9 @@
             <form action="{{ route('admin.event.create') }}" method="post" id="validationform" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group row">
-                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Judul</label>
+                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Nama</label>
                     <div class="col-12 col-sm-8 col-lg-6">
-                        <input type="text" required="" placeholder="Masukkan nama acara" class="form-control" name="title">
+                        <input type="text" required="" placeholder="Masukkan nama acara" class="form-control" name="name">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -39,7 +39,27 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Kategori</label>
+                    <div class="col-12 col-sm-8 col-lg-6">
+                        <select class="form-control form-control-sm" name="id_event">
+                            <option disabled selected>Pilih Acara</option>
+                            @foreach ( $categories as $category )
+                            <option value="{{ $categort->id }}">{{ $categort->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Tanggal/Waktu</label>
+                    <div class="col-sm-4 col-lg-3 mb-3 mb-sm-0">
+                        <input id="date" type="date" required="" class="form-control" name="date">
+                    </div>
+                    <div class="col-sm-4 col-lg-3">
+                        <input type="time" required="" data-parsley-equalto="#pass2" class="form-control" name="time">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Kuota/Harga</label>
                     <div class="col-sm-4 col-lg-3 mb-3 mb-sm-0">
                         <input id="date" type="date" required="" class="form-control" name="date">
                     </div>
