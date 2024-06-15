@@ -101,7 +101,7 @@
                         <div class="page-header">
                             @php
                                 $currentPath = Request::path();
-                                $firstSegment = explode('/', $currentPath)[0];
+                                $firstSegment = explode('/', $currentPath)[1];
                             @endphp
                             <h2 class="pageheader-title">{{ $firstSegment }}</h2>
                             <div class="page-breadcrumb">
@@ -143,6 +143,21 @@
     <script src="{{ asset('assets/admin/vendor/datatables/js/dataTables.bootstrap4.js') }}"></script>
     <!-- main js -->
     <script src="{{ asset('assets/admin/js/main-js.js') }}"></script>
+    <script>
+        // Fade out alerts after 2 seconds
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                const alerts = document.querySelectorAll('.alert');
+                alerts.forEach(function(alert) {
+                    alert.style.transition = 'opacity 0.5s ease';
+                    alert.style.opacity = '0';
+                    setTimeout(function() {
+                        alert.style.display = 'none';
+                    }, 500);
+                });
+            }, 2000); // 2 seconds
+        });
+    </script>
 </body>
 
 </html>

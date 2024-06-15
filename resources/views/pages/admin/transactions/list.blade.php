@@ -10,6 +10,7 @@
                             <th class="text-center">Nama Pengguna</th>
                             <th class="text-center">Id Ticket</th>
                             <th class="text-center">Tipe Tiket</th>
+                            <th class="text-center">Jumlah Tiket</th>
                             <th class="text-center">Bukti Bayar</th>
                             <th class="text-center">Tanggal Bayar</th>
                             <th class="text-center">Status</th>
@@ -23,6 +24,7 @@
                             <td class="text-justify">{{ $transaction->userData->name }}</td>
                             <td class="text-center">{{ $transaction->ticketData->hashid }}</td>
                             <td class="text-center">{{ $transaction->ticketData->ticket_type }}</td>
+                            <td class="text-center">{{ $transaction->quantity }}</td>
                             <td class="text-center"><img src="assets/img/uploads/{{ $transaction->proof }}" alt=bukti_bayar" width="25px"></td>
                             <td class="text-center">{{ $transaction->date }}</td>
                             <td class="text-center">{{ $transaction->idValid ? 'Valid' : 'Tidak Valid' }}</td>

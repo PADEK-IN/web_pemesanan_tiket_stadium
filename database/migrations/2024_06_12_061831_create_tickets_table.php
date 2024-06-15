@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('id_event')->constrained(table: 'events', indexName:'tickets_id_event');
             $table->enum('ticket_type', ['reguler', 'vip']);
             $table->decimal('price',10,2);
-            $table->integer('quantity');
+            $table->integer('quota');
             $table->timestamps();
         });
     }

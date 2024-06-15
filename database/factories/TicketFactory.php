@@ -21,7 +21,7 @@ class TicketFactory extends Factory
             'id_event' => Event::factory(),
             'ticket_type' => 'reguler',
             'price' => (fake()->randomNumber(2))*50000,
-            'quantity' => fake()->randomNumber(3),
+            'quota' => fake()->randomNumber(3),
         ];
     }
 

@@ -12,6 +12,8 @@ class Ticket extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['id_event', 'ticket_type', 'price', 'quota'];
+
     public function getHashidAttribute()
     {
         return Hashids::encode($this->id);
