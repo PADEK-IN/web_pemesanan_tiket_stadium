@@ -1,10 +1,10 @@
 <?php
 
+use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\EventController;
 use App\Http\Controllers\admin\IndexController;
 use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\ReviewController;
-use App\Http\Controllers\admin\TicketController;
 use App\Http\Controllers\admin\TransactionController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\user\UserEventController;
@@ -46,9 +46,9 @@ Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
     Route::get('/event/create', [EventController::class, 'getCreatePage'])->name('admin.event.create');
     Route::post('/event/create', [EventController::class, 'create']);
 
-    Route::get('/ticket', [TicketController::class, 'getAllData'])->name('admin.ticket');
-    Route::get('/ticket/create', [TicketController::class, 'getCreatePage'])->name('admin.ticket.create');
-    Route::post('/ticket/create', [TicketController::class, 'create'])->name('admin.ticket.create');
+    Route::get('/category', [CategoryController::class, 'getAllData'])->name('admin.category');
+    Route::get('/category/create', [CategoryController::class, 'getCreatePage'])->name('admin.category.create');
+    Route::post('/category/create', [CategoryController::class, 'create'])->name('admin.category.create');
 
     Route::get('/transaction', [TransactionController::class, 'getAllData'])->name('admin.transaction');
 
