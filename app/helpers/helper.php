@@ -30,6 +30,13 @@ if (!function_exists('eventStatus')) {
             } else {
                 return 'Selesai';
             }
+        } elseif($forWhat === 'event'){
+            //status berdasarkan perbandingan waktu
+            if ($hoursDiff >= 24 || $hoursDiff >= 0 && $hoursDiff <= 12) {
+                return '';
+            } else {
+                return 'disabled';
+            }
         } else {
             // Tentukan status berdasarkan perbandingan waktu
             if ($hoursDiff >= 24 || $hoursDiff >= 0 && $hoursDiff <= 12) {
