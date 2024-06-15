@@ -74,7 +74,7 @@
                                 <a class="nav-link" href="{{ route('admin.event') }}" aria-expanded="false"><i class="far fa-star"></i>Acara</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="{{ route('admin.ticket') }}" aria-expanded="false"><i class="far fa-gem"></i>Tiket</a>
+                                <a class="nav-link" href="{{ route('admin.category') }}" aria-expanded="false"><i class="far fa-gem"></i>Kategori</a>
                             </li>
                             <li class="nav-item ">
                                 <a class="nav-link" href="{{ route('admin.transaction') }}" aria-expanded="false"><i class="far fa-money-bill-alt"></i>Transaksi</a>
