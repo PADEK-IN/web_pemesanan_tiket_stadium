@@ -13,7 +13,9 @@ class UserEventController extends Controller
 {
     public function getAllData(): View
     {
-        return view('pages.user.events.list', ['events' => Event::all()]);
+        $events = Event::orderByDesc('events.date')->orderByDesc('events.time')->get();
+
+        return view('pages.user.events.list', ['events' => $events ]);
     }
 
     public function getCreatePage(): View
