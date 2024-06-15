@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Models\Category;
 use App\Models\Event;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
@@ -18,7 +19,8 @@ class EventController extends Controller
 
     public function getCreatePage(): View
     {
-        return view('pages.admin.events.create');
+        $categories = Category::all(['id', 'name']);
+        return view('pages.admin.events.create', compact('categories'));
     }
 
     public function show($id): View
@@ -39,7 +41,7 @@ class EventController extends Controller
     {
         // $event = new Event;
 
-        // $event->title = $request->input('title');
+        // $event->name = $request->input('name');
         // $event->description = $request->input('description');
         // $event->date = $request->input('date');
         // $event->time = $request->input('time');
@@ -77,11 +79,14 @@ class EventController extends Controller
         // Create and save the event
         try {
             Event::create([
-                'title' => $request->input('title'),
+                'name' => $request->input('name'),
                 'description' => $request->input('description'),
+                'id_category' => intval($request->input('id_category')),
+                'image' => $imagePath, // Save the image name to the database
                 'date' => $request->input('date'),
                 'time' => $request->input('time'),
-                'image' => $imagePath, // Save the image name to the database
+                'quota' => $request->input('quota'),
+                'price' => $request->input('price'),
             ]);
         } catch (\Exception $e) {
             return redirect()->back()

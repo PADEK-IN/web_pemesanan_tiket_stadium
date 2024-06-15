@@ -9,7 +9,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Validator;
 
-class CategoriController extends Controller
+class CategoryController extends Controller
 {
     public function getAllData(): View
     {
