@@ -37,5 +37,12 @@ class UserEventController extends Controller
         return view('pages.user.events.detail', compact('event'));
     }
 
+    public function review($id): View
+    {
+        // Find the event by ID
+        $event = Event::find($id);
+
+        return view('pages.user.events.review', compact('event'));
+    }
 
 }

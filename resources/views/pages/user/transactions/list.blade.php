@@ -38,7 +38,7 @@
                             <td class="text-center">{{ eventStatus($transaction->ticketData->eventData->date, $transaction->ticketData->eventData->time, 'status') }}</td>
                             <td class="text-center">{{ $transaction->isValid?'Valid':'Invalid' }}</td>
                             <td class="text-center" style="padding: 0">
-                                <a href="#" class="btn btn-sm btn-secondary
+                                <a href="/event/review/{{ $transaction->ticketData->eventData->id }}" class="btn btn-sm btn-secondary
                                 {{ eventStatus($transaction->ticketData->eventData->date, $transaction->ticketData->eventData->time, 'button') }}">Review</a>
                             </td>
                         </tr>

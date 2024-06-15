@@ -25,3 +25,27 @@
 .pagination li {
     margin: 0 5px;
 }
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse; /* this is the magic */
+    justify-content: flex-end;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.rating label:hover,
+.rating label:hover ~ label { /* reason why the stars are in reverse order in the html */
+    color: orange;
+}
+
+.rating input:checked ~ label {
+    color: orange;
+}
