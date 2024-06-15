@@ -23,7 +23,7 @@ class UserEventController extends Controller
         return view('pages.user.events.create');
     }
 
-    public function show($id): View
+    public function detail($id): View
     {
         // Find the event by ID
         $event = Event::find($id);

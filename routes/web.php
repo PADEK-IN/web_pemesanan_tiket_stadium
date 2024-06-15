@@ -24,6 +24,7 @@ Route::middleware(["auth", "verified"])->group(function (){
     Route::get('/dashboard', [UserIndexController::class, 'index'])->name('dashboard');
 
     Route::get('/event', [UserEventController::class, 'getAllData'])->name('event');
+    Route::get('/event/{id}', [UserEventController::class, 'detail'])->name('event.detail');
 
     Route::get('/transaction', [UserTransactionController::class, 'getAllData'])->name('transaction');
 

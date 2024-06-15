@@ -24,7 +24,7 @@
                     <img class="img-fluid card-img" src="{{ asset($event->image) }}" alt="Card image cap">
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title"><a href="/admin/event/{{ $event->id }}">{{ $event->title }}</a></h3>
+                    <h3 class="card-title"><a href="/event/{{ $event->id }}">{{ $event->title }}</a></h3>
                     <p class="card-text">{{ Str::limit($event->description, 50) }}</p>
                     <p class="text-muted">{{ $event->date }} | {{ $event->time }}</p>
                     <div class="text-center">
