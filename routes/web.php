@@ -10,7 +10,7 @@ use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\user\UserEventController;
 use App\Http\Controllers\user\UserIndexController;
 use App\Http\Controllers\user\UserProfileController;
-use App\Http\Controllers\user\UserTicketController;
+use App\Http\Controllers\user\UserTransactionController;
 use Illuminate\Support\Facades\Route;
 
 // Guest Routes
@@ -25,7 +25,7 @@ Route::middleware(["auth", "verified"])->group(function (){
 
     Route::get('/event', [UserEventController::class, 'getAllData'])->name('event');
 
-    Route::get('/ticket', [UserTicketController::class, 'getAllData'])->name('ticket');
+    Route::get('/transaction', [UserTransactionController::class, 'getAllData'])->name('transaction');
 
     Route::get('/profile', [UserProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [UserProfileController::class, 'update'])->name('profile.update');

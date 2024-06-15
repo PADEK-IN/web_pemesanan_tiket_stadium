@@ -75,7 +75,7 @@
                                 <a class="nav-link" href="{{ route('event') }}" aria-expanded="false"><i class="far fa-star"></i>Acara</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="{{ route('ticket') }}" aria-expanded="false"><i class="far fa-gem"></i>Tiket</a>
+                                <a class="nav-link" href="{{ route('transaction') }}" aria-expanded="false"><i class="far fa-gem"></i>Transaksi</a>
                             </li>
                         </ul>
                     </div>
