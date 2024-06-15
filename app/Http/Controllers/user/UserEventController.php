@@ -45,4 +45,11 @@ class UserEventController extends Controller
         return view('pages.user.events.review', compact('event'));
     }
 
+    public function buyTicket():RedirectResponse
+    {
+
+
+        return redirect()->route('event')->with('success', 'Berhasil membeli tiket.');
+    }
+
 }
