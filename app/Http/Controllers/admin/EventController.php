@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Validator;
+use Vinkla\Hashids\Facades\Hashids;
 
 class EventController extends Controller
 {
@@ -25,8 +26,9 @@ class EventController extends Controller
 
     public function show($id): View
     {
+        $validId = Hashids::decode($id);
         // Find the event by ID
-        $event = Event::find($id);
+        $event = Event::find($validId[0]);
 
         // Check if the event exists
         if (!$event) {
@@ -39,15 +41,6 @@ class EventController extends Controller
 
     public function create(Request $request): RedirectResponse
     {
-        // $event = new Event;
-
-        // $event->name = $request->input('name');
-        // $event->description = $request->input('description');
-        // $event->date = $request->input('date');
-        // $event->time = $request->input('time');
-
-        // $event->save();
-
         // Validate the incoming request data
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:50',
@@ -78,11 +71,12 @@ class EventController extends Controller
 
         // Create and save the event
         try {
+            $idCategory = Hashids::decode($request->input('id_category'));
             Event::create([
                 'name' => $request->input('name'),
                 'description' => $request->input('description'),
-                'id_category' => intval($request->input('id_category')),
-                'image' => $imagePath, // Save the image name to the database
+                'id_category' => $idCategory[0],
+                'image' => $imagePath,
                 'date' => $request->input('date'),
                 'time' => $request->input('time'),
                 'quota' => $request->input('quota'),

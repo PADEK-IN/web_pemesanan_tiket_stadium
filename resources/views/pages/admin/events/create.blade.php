@@ -41,10 +41,10 @@
                 <div class="form-group row">
                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Kategori</label>
                     <div class="col-12 col-sm-8 col-lg-6">
-                        <select class="form-control form-control-sm" name="id_event">
+                        <select class="form-control form-control-sm" name="id_category">
                             <option disabled selected>Pilih Kategori</option>
                             @foreach ( $categories as $category )
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            <option value="{{ $category->hashid }}">{{ $category->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -61,10 +61,10 @@
                 <div class="form-group row">
                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Kuota/Harga</label>
                     <div class="col-sm-4 col-lg-3 mb-3 mb-sm-0">
-                        <input type="number" required="" class="form-control" placeholder="Kuota Acara">
+                        <input type="number" required="" class="form-control" name="quota" placeholder="Kuota Acara">
                     </div>
                     <div class="col-sm-4 col-lg-3">
-                        <input type="number" required="" class="form-control" placeholder="Harga Tiket (Rupiah)">
+                        <input type="number" required="" class="form-control" name="price" placeholder="Harga Tiket (Rupiah)">
                     </div>
                 </div>
                 <div class="form-group row">
