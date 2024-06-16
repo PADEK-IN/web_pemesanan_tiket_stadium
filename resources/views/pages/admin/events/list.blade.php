@@ -40,7 +40,7 @@
                             <td class="text-center">{{ $event->date }}</td>
                             <td class="text-center">{{ $event->time }}</td>
                             <td class="text-center">{{ $event->quota }}</td>
-                            <td class="text-center">{{ $event->price }}</td>
+                            <td class="text-left">{{ formatRupiah($event->price) }}</td>
                             <td class="text-center">{{ $event['isActive']?"Aktif":"Selesai" }}</td>
                             <td class="text-center" style="padding: 0">
                                 <a href="#" class="mr-2">Edit</a>
