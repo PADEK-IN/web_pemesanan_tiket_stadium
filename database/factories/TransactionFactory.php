@@ -23,7 +23,6 @@ class TransactionFactory extends Factory
             'id_event' => Event::factory(),
             'quantity' => fake()->randomNumber(1),
             'proof' => fake()->image("C:\laragon\www\myproject\web_pemesanan_tiket_stadium\public\assets\img\uploads",640,480,null,false),
-            'date' => fake()->dateTimeBetween("now", "+3 months")->format('Y-m-d'),
         ];
     }
 

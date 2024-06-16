@@ -16,7 +16,6 @@ return new class extends Migration
             $table->foreignId('id_user')->constrained(table:'users',indexName:'transaction_id_user');
             $table->foreignId('id_event')->constrained(table:'events',indexName:'transaction_id_event');
             $table->integer('quantity');
-            $table->date('date');
             $table->string('proof', 150)->nullable();
             $table->string('status')->default("Sedang diproses");
             $table->boolean('isValid')->default(false);
