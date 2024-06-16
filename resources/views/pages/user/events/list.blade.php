@@ -21,7 +21,7 @@
             @foreach($events as $index => $event)
             <div class="card card-list m-2" data-title="{{ strtolower($event->name) }}" data-description="{{ strtolower($event->description) }}">
                 <div class="card-img-top">
-                    <img class="img-fluid card-img" src="{{ asset($event->image) }}" alt="Card image cap">
+                    <img class="img-fluid card-img" src="{{ asset('assets/img/event').'/'.$event->image }}" alt="Gambar Event">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title"><a href="/event/{{ $event->hashid }}">{{ $event->name }}</a></h3>
@@ -29,7 +29,7 @@
                     <p class="text-muted">{{ $event->date }} | {{ $event->time }}</p>
                     <p class="text-muted">{{ $event->eventCategory->name }}</p>
                     <p class="text-muted">{{ $event->quota }}</p>
-                    <p class="text-muted">{{ $event->price }}</p>
+                    <p class="text-muted">{{ formatRupiah($event->price) }}</p>
                     <div class="text-center">
                         <a href="#" class="btn btn-primary
                         {{ eventStatus($event->date, $event->time, 'event') }}">
