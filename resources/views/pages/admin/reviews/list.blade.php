@@ -12,7 +12,7 @@
                             <th class="text-center">Rating</th>
                             <th class="text-center">Comment</th>
                             <th class="text-center">Tanggal Comment</th>
-                            <th class="text-center">Aksi</th>
+                            {{-- <th class="text-center">Aksi</th> --}}
                         </tr>
                     </thead>
                     <tbody>
@@ -20,15 +20,15 @@
                         <tr>
                             <td class="text-center" >{{ $index + 1 }}</td>
                             <td class="text-left">{{ $review->userData->name }}</td>
-                            <td class="text-center">{{ $review->eventData->title }}</td>
+                            <td class="text-center">{{ $review->eventData->name }}</td>
                             <td class="text-center">{{ $review->rating }}</td>
-                            <td class="text-justify">{{ Str::limit($review->comment, 50) }}</td>
+                            <td class="text-justify">{{ Str::limit($review->comment, 25) }}</td>
                             <td class="text-center">{{ $review->created_at->diffForHumans() }}</td>
-                            <td class="text-center" style="padding: 0">
+                            {{-- <td class="text-center" style="padding: 0">
                                 <a href="#" class="mr-2">Edit</a>
                                 <span>|</span>
                                 <a href="#" class="ml-2">Delete</a>
-                            </td>
+                            </td> --}}
                         </tr>
                         @endforeach
                     </tbody>
@@ -40,7 +40,7 @@
                             <th class="text-center">Rating</th>
                             <th class="text-center">Comment</th>
                             <th class="text-center">Tanggal Comment</th>
-                            <th class="text-center">Aksi</th>
+                            {{-- <th class="text-center">Aksi</th> --}}
                         </tr>
                     </tfoot>
                 </table>
