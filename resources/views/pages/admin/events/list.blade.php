@@ -22,8 +22,7 @@
                             <th class="text-center">Judul</th>
                             <th class="text-center">Deskripsi</th>
                             <th class="text-center">Kategori</th>
-                            <th class="text-center">Tanggal</th>
-                            <th class="text-center">Waktu</th>
+                            <th class="text-center">Jadwal</th>>
                             <th class="text-center">Kuota</th>
                             <th class="text-center">Harga</th>
                             <th class="text-center">Status</th>
@@ -37,8 +36,7 @@
                             <td class="text-justify"><a href="/admin/event/{{ $event->hashid }}">{{ $event->name }}</a></td>
                             <td class="text-justify">{{ Str::limit($event['description'], 25) }}</td>
                             <td class="text-center">{{ $event->eventCategory->name }}</td>
-                            <td class="text-center">{{ $event->date }}</td>
-                            <td class="text-center">{{ $event->time }}</td>
+                            <td class="text-center">{{ $event->schedule }}</td>
                             <td class="text-center">{{ $event->quota }}</td>
                             <td class="text-left">{{ formatRupiah($event->price) }}</td>
                             <td class="text-center">{{ $event['isActive']?"Aktif":"Selesai" }}</td>
@@ -56,8 +54,7 @@
                             <th class="text-center">Judul</th>
                             <th class="text-center">Deskripsi</th>
                             <th class="text-center">Kategori</th>
-                            <th class="text-center">Tanggal</th>
-                            <th class="text-center">Waktu</th>
+                            <th class="text-center">Jadwal</th>
                             <th class="text-center">Kuota</th>
                             <th class="text-center">Harga</th>
                             <th class="text-center">Status</th>

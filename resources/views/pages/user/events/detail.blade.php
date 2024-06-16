@@ -12,14 +12,14 @@
                         </div>
                         <div class="col-md-8">
                             <p><strong>Deskripsi:</strong> {{ $event->description }}</p>
-                            <p><strong>Jadwal:</strong> {{ $event->date }} | {{ $event->time }}</p>
+                            <p><strong>Jadwal:</strong> {{ $event->schedule }}</p>
                             <p><strong>Kategori:</strong> {{ $event->eventCategory->name }}</p>
                             <p><strong>Kuota:</strong> {{ $event->quota }}</p>
                             <p><strong>Harga:</strong> {{ formatRupiah( $event->price) }}</p>
-                            <p><strong>Status Event:</strong> {{ eventStatus($event->date, $event->time, 'status') }}</p>
+                            <p><strong>Status Event:</strong> {{ eventStatus($event->schedule, 'status') }}</p>
                             <div class="text-center">
                                 <a href="#" class="btn btn-primary
-                                {{ eventStatus($event->date, $event->time, 'event') }}">
+                                {{ eventStatus($event->schedule, 'event') }}">
                                  {{ $event['isActive']?"Pesan Tiket":"Selesai" }}</a>
                                  <button class="btn btn-warning" onclick="history.back()">Kembali</button>
                             </div>

@@ -26,13 +26,13 @@
                 <div class="card-body">
                     <h3 class="card-title"><a href="/event/{{ $event->hashid }}">{{ $event->name }}</a></h3>
                     <p class="card-text">{{ Str::limit($event->description, 50) }}</p>
-                    <p class="text-muted">{{ $event->date }} | {{ $event->time }}</p>
+                    <p class="text-muted">{{ $event->schedule }}</p>
                     <p class="text-muted">{{ $event->eventCategory->name }}</p>
                     <p class="text-muted">{{ $event->quota }}</p>
                     <p class="text-muted">{{ formatRupiah($event->price) }}</p>
                     <div class="text-center">
                         <a href="/transaction/create/{{ $event->hashid }}" class="btn btn-primary
-                        {{ eventStatus($event->date, $event->time, 'event') }}">
+                        {{ eventStatus($event->schedule, 'event') }}">
                          {{ $event['isActive']?"Pesan Tiket":"Selesai" }}</a>
                     </div>
                 </div>

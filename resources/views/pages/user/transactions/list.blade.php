@@ -34,12 +34,12 @@
                             <td class="text-center">{{ $transaction->id }}</td>
                             <td class="text-justify"><a href="/event/{{ $transaction->eventData->hashid }}">{{ $transaction->eventData->name }}</a></td>
                             <td class="text-left">{{ formatRupiah($transaction->eventData->price) }}</td>
-                            <td class="text-center">{{ $transaction->eventData->date }} | {{ $transaction->eventData->time }}</td>
-                            <td class="text-center">{{ eventStatus($transaction->eventData->date, $transaction->eventData->time, 'status') }}</td>
+                            <td class="text-center">{{ $transaction->eventData->schedule }}</td>
+                            <td class="text-center">{{ eventStatus($transaction->eventData->schedule, 'status') }}</td>
                             <td class="text-center">{{ $transaction->status }}</td>
                             <td class="text-center" style="padding: 0">
                                 <a href="/event/review/{{ $transaction->eventData->hashid }}" class="btn btn-sm btn-secondary
-                                {{ eventStatus($transaction->eventData->date, $transaction->eventData->time, 'button') }}">Review</a>
+                                {{ eventStatus($transaction->eventData->schedule, 'button') }}">Review</a>
                             </td>
                         </tr>
                         @endforeach

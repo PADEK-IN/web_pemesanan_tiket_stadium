@@ -15,7 +15,8 @@ class EventController extends Controller
 {
     public function getAllData(): View
     {
-        return view('pages.admin.events.list', ['events' => Event::all()]);
+        $events = Event::orderByDesc('datetime')->get();
+        return view('pages.admin.events.list', compact('events'));
     }
 
     public function getCreatePage(): View
@@ -47,8 +48,7 @@ class EventController extends Controller
             'description' => 'required|string',
             'id_category' => 'required|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // max 2MB
-            'date' => 'required|date',
-            'time' => 'required|date_format:H:i',
+            'schedule' => 'required|date_format:Y-m-d H:i:s',
             'quota' => 'required|integer',
             'price' => 'required|integer',
         ]);
@@ -77,8 +77,7 @@ class EventController extends Controller
                 'description' => $request->input('description'),
                 'id_category' => $idCategory[0],
                 'image' => $imagePath,
-                'date' => $request->input('date'),
-                'time' => $request->input('time'),
+                'schedule' => $request->input('schedule'),
                 'quota' => $request->input('quota'),
                 'price' => $request->input('price'),
             ]);

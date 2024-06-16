@@ -12,7 +12,7 @@
                         </div>
                         <div class="col-md-8">
                             <p><strong>Deskripsi:</strong> {{ $event->description }}</p>
-                            <p><strong>Jadwal:</strong> {{ $event->date }} | {{ $event->time }}</p>
+                            <p><strong>Jadwal:</strong> {{ $event->schedule }}</p>
                             <p><strong>Kategori:</strong> {{ $event->eventCategory->name }}</p>
                             <p><strong>Kuota:</strong> {{ $event->quota }}</p>
                             <p><strong>Harga:</strong> {{ formatRupiah($event->price) }}</p>

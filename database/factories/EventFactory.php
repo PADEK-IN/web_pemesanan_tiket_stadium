@@ -22,8 +22,7 @@ class EventFactory extends Factory
             'description' => fake()->sentence(10),
             'id_category' => Category::factory(),
             'image' => fake()->image("C:\laragon\www\myproject\web_pemesanan_tiket_stadium\public\assets\img\\event",640,480,null,false),
-            'date' => fake()->dateTimeBetween("now", "+3 months")->format('Y-m-d'),
-            'time' => fake()->time("H:i"),
+            'schedule' => fake()->dateTimeBetween("now", "+1 months")->format('Y-m-d H:i:s'),
             'price' => (fake()->randomNumber(2))*50000,
             'quota' => fake()->randomNumber(3),
         ];

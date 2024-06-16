@@ -50,12 +50,9 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Tanggal/Waktu</label>
-                    <div class="col-sm-4 col-lg-3 mb-3 mb-sm-0">
-                        <input type="date" required="" class="form-control" name="date">
-                    </div>
-                    <div class="col-sm-4 col-lg-3">
-                        <input type="time" required="" class="form-control" name="time">
+                    <label class="col-12 col-sm-3 col-form-label text-sm-right">Jadwal Acara</label>
+                    <div class="col-12 col-sm-8 col-lg-6">
+                        <input type="datetime-local" required="" placeholder="Masukkan jadwal" class="form-control" name="schedule">
                     </div>
                 </div>
                 <div class="form-group row">
