@@ -15,9 +15,7 @@ class UserTransactionController extends Controller
     public function getAllData(): View
     {
 
-        $transactions = Transaction::with('ticketData')
-                    ->join('tickets', 'transactions.id_ticket', '=', 'tickets.id')
-                    ->join('events', 'tickets.id_event', '=', 'events.id')
+        $transactions = Transaction::join('events', 'events.id', '=', 'id_event')
                     ->orderByDesc('events.date')
                     ->orderByDesc('events.time')
                     ->get();
