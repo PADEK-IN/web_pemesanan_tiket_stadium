@@ -18,8 +18,8 @@
                     <thead>
                         <tr>
                             <th class="text-center px-2" >No</th>
+                            <th class="text-center">Kode Tiket</th>
                             <th class="text-center">Nama Event</th>
-                            <th class="text-center">Tipe Tiket</th>
                             <th class="text-center">Harga</th>
                             <th class="text-center">Jadwal Acara</th>
                             <th class="text-center">Status Acara</th>
@@ -31,15 +31,15 @@
                         @foreach ($transactions as $index => $transaction)
                         <tr>
                             <td class="text-center" >{{ $index + 1 }}</td>
-                            <td class="text-justify"><a href="/admin/event/{{ $transaction->id_event }}">{{ $transaction->ticketData->eventData->title }}</a></td>
-                            <td class="text-center">{{ $transaction->ticketData->ticket_type }}</td>
-                            <td class="text-center">{{ formatRupiah($transaction->ticketData->price) }}</td>
-                            <td class="text-center">{{ $transaction->ticketData->eventData->date }} | {{ $transaction->ticketData->eventData->time }}</td>
-                            <td class="text-center">{{ eventStatus($transaction->ticketData->eventData->date, $transaction->ticketData->eventData->time, 'status') }}</td>
-                            <td class="text-center">{{ $transaction->isValid?'Valid':'Invalid' }}</td>
+                            <td class="text-center">{{ $transaction->hashid }}</td>
+                            <td class="text-justify"><a href="/admin/event/{{ $transaction->id_event->hashid }}">{{ $transaction->eventData->name }}</a></td>
+                            <td class="text-center">{{ formatRupiah($transaction->eventData->price) }}</td>
+                            <td class="text-center">{{ $transaction->eventData->date }} | {{ $transaction->eventData->time }}</td>
+                            <td class="text-center">{{ eventStatus($transaction->eventData->date, $transaction->eventData->time, 'status') }}</td>
+                            <td class="text-center">{{ $transaction->status }}</td>
                             <td class="text-center" style="padding: 0">
-                                <a href="/event/review/{{ $transaction->ticketData->eventData->id }}" class="btn btn-sm btn-secondary
-                                {{ eventStatus($transaction->ticketData->eventData->date, $transaction->ticketData->eventData->time, 'button') }}">Review</a>
+                                <a href="/event/review/{{ $transaction->eventData->hashid }}" class="btn btn-sm btn-secondary
+                                {{ eventStatus($transaction->eventData->date, $transaction->eventData->time, 'button') }}">Review</a>
                             </td>
                         </tr>
                         @endforeach
@@ -47,10 +47,12 @@
                     <tfoot>
                         <tr>
                             <th class="text-center">No</th>
+                            <th class="text-center">Kode Tiket</th>
                             <th class="text-center">Nama Event</th>
-                            <th class="text-center">Tipe Tiket</th>
                             <th class="text-center">Harga</th>
-                            <th class="text-center">Kuota</th>
+                            <th class="text-center">Jadwal Acara</th>
+                            <th class="text-center">Status Acara</th>
+                            <th class="text-center">Pembayaran</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </tfoot>
