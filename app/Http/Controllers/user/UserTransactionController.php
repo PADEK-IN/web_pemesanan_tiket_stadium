@@ -17,10 +17,10 @@ class UserTransactionController extends Controller
     public function getAllData(): View
     {
 
-        $transactions = Transaction::join('events', 'events.id', '=', 'id_event')
-                    ->orderByDesc('events.date')
-                    ->orderByDesc('events.time')
-                    ->get();
+        $transactions = Transaction::join('events', 'events.id', '=', 'transactions.id_event')
+                                    ->select('transactions.*')
+                                    ->orderByDesc('created_at')
+                                    ->get();
 
         return view('pages.user.transactions.list', ['transactions' => $transactions]);
     }
@@ -32,13 +32,12 @@ class UserTransactionController extends Controller
 
         $event = Event::find($idEvent[0]);
 
-        return view('pages.user.transactions.create', compact('event', 'idUser'));
+        return view('pages.user.transactions.create', compact('event'));
     }
 
     public function createTransaction(Request $request): RedirectResponse
     {
         $validator = Validator::make($request->all(), [
-            'id_event' => 'required|integer',
             'quantity' => 'required|integer',
             'proof' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // max 2MB
         ]);
@@ -66,7 +65,7 @@ class UserTransactionController extends Controller
             Transaction::create([
                 'id_user' => $idUser,
                 'id_event' => $idEvent[0],
-                'quantity' => $request->input('rating'),
+                'quantity' => $request->input('quantity'),
                 'proof' => $imagePath,
             ]);
 

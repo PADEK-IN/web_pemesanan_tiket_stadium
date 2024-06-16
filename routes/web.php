@@ -27,10 +27,10 @@ Route::middleware(["auth", "verified"])->group(function (){
     Route::get('/event/{id}', [UserEventController::class, 'detail'])->name('event.detail');
     Route::get('/event/review/{id}', [UserEventController::class, 'reviewPage'])->name('event.review');
     Route::post('/event/review', [UserEventController::class, 'createReview'])->name('event.review.store');
-    Route::post('/event/ticket', [UserEventController::class, 'buyTicket'])->name('event.ticket');
 
     Route::get('/transaction', [UserTransactionController::class, 'getAllData'])->name('transaction');
     Route::get('/transaction/create/{id}', [UserTransactionController::class, 'createPage'])->name('transaction.create');
+    Route::post('/transaction/create/', [UserTransactionController::class, 'createTransaction'])->name('transaction.create.store');
 
     Route::get('/profile', [UserProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [UserProfileController::class, 'update'])->name('profile.update');

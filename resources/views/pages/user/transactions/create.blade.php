@@ -24,13 +24,13 @@
 
         <h3 class="card-header">Pemesanan Tiket Acara</h3>
         <div class="card-body">
-            <form action="{{ route('event.review.store') }}" method="post" id="validationform">
+            <form action="{{ route('transaction.create.store') }}" method="post" id="validationform" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group row">
                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Acara</label>
                     <div class="col-12 col-sm-8 col-lg-6 rating">
                         <span class="pt-2">{{ $event->name }}</span>
-                        <input type="text" value="{{ $event->hashid }}" disabled name="id_event" class="d-none form-control">
+                        <input type="text" value="{{ $event->hashid }}" name="id_event" class="d-none form-control">
                     </div>
                 </div>
 
@@ -61,7 +61,7 @@
                 <div class="form-group row">
                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Bukti Pembayaran</label>
                     <div class="col-12 col-sm-8 col-lg-6">
-                        <input type="file" id="image" name="proof" class="form-control-file">
+                        <input type="file" id="proof" name="proof" class="form-control-file">
                         <p class="text-danger mt-1"><i>Lakukan pembayaran ke rekening BSI: 1010202030 a/n TakeItNow sesuai nominal total dan upload bukti pembayaran dengan jelas.</i></p>
                     </div>
                 </div>
