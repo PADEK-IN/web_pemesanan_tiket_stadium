@@ -11,6 +11,7 @@ class TransactionController extends Controller
 {
     public function getAllData(): View
     {
-        return view('pages.admin.transactions.list', ['transactions' => Transaction::all()]);
+        $transactions = Transaction::orderByDesc('created_at')->get();
+        return view('pages.admin.transactions.list', compact('transactions'));
     }
 }

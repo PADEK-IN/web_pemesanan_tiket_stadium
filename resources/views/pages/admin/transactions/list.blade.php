@@ -31,9 +31,7 @@
                             <td class="text-center">{{ $transaction->status }}</td>
                             <td class="text-center">{{ $transaction->idValid ? 'Valid' : 'Tidak Valid' }}</td>
                             <td class="text-center" style="padding: 0">
-                                <a href="#" class="mr-2">Edit</a>
-                                <span>|</span>
-                                <a href="#" class="ml-2">Delete</a>
+                                <a href="#" class="mr-2 btn btn-sm btn-primary">Validasi</a>
                             </td>
                         </tr>
                         @endforeach
