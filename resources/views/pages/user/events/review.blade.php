@@ -26,11 +26,11 @@
         <div class="card-body">
             <form action="{{ route('admin.event.create') }}" method="post" id="validationform">
                 @csrf
-                <input type="number" value="{{ $event->id }}" class="d-none" disabled>
+                <input type="number" value="{{ $event->hashid }}" class="d-none" disabled>
                 <div class="form-group row">
                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Acara</label>
                     <div class="col-12 col-sm-8 col-lg-6 rating">
-                        <span class="pt-2">{{ $event->title }}</span>
+                        <span class="pt-2">{{ $event->name }}</span>
                     </div>
                 </div>
 

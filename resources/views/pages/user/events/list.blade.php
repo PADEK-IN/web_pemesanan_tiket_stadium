@@ -19,14 +19,17 @@
 
         <div id="cardContainer" class="d-flex flex-wrap">
             @foreach($events as $index => $event)
-            <div class="card card-list m-2" data-title="{{ strtolower($event->title) }}" data-description="{{ strtolower($event->description) }}">
+            <div class="card card-list m-2" data-title="{{ strtolower($event->name) }}" data-description="{{ strtolower($event->description) }}">
                 <div class="card-img-top">
                     <img class="img-fluid card-img" src="{{ asset($event->image) }}" alt="Card image cap">
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title"><a href="/event/{{ $event->id }}">{{ $event->title }}</a></h3>
+                    <h3 class="card-title"><a href="/event/{{ $event->hashid }}">{{ $event->name }}</a></h3>
                     <p class="card-text">{{ Str::limit($event->description, 50) }}</p>
                     <p class="text-muted">{{ $event->date }} | {{ $event->time }}</p>
+                    <p class="text-muted">{{ $event->eventCategory->name }}</p>
+                    <p class="text-muted">{{ $event->quota }}</p>
+                    <p class="text-muted">{{ $event->price }}</p>
                     <div class="text-center">
                         <a href="#" class="btn btn-primary
                         {{ eventStatus($event->date, $event->time, 'event') }}">
