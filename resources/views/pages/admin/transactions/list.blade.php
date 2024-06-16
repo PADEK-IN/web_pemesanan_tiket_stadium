@@ -27,7 +27,7 @@
                             <td class="text-center">{{ $transaction->hashid }}</td>
                             <td class="text-center">{{ $transaction->quantity }}</td>
                             <td class="text-center"><img src="assets/img/uploads/{{ $transaction->proof }}" alt=bukti_bayar" width="25px"></td>
-                            <td class="text-center">{{ $transaction->date }}</td>
+                            <td class="text-center">{{ $transaction->created_at }}</td>
                             <td class="text-center">{{ $transaction->status }}</td>
                             <td class="text-center">{{ $transaction->idValid ? 'Valid' : 'Tidak Valid' }}</td>
                             <td class="text-center" style="padding: 0">
