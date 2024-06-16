@@ -11,7 +11,7 @@
         @endif
         <div class="d-flex justify-content-between m-2">
             <h5 class="card-header">Semua Data Kategori</h5>
-            <a href="{{ route('admin.ticket.create') }}" class="btn btn-space btn-primary">Buat Kategori</a>
+            <a href="{{ route('admin.category.create') }}" class="btn btn-space btn-primary">Buat Kategori</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
