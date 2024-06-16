@@ -9,12 +9,12 @@
                             <th class="text-center px-2" >No</th>
                             <th class="text-center">Nama Pengguna</th>
                             <th class="text-center">Acara</th>
-                            <th class="text-center">Id Ticket</th>
+                            <th class="text-center">Kode Tiket</th>
                             <th class="text-center">Jumlah Tiket</th>
                             <th class="text-center">Bukti Bayar</th>
                             <th class="text-center">Tanggal Bayar</th>
                             <th class="text-center">Status</th>
-                            <th class="text-center">Validasi</th>
+                            <th class="text-center">Pembayaran</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -22,8 +22,8 @@
                         @foreach ($transactions as $index => $transaction)
                         <tr>
                             <td class="text-center" >{{ $index + 1 }}</td>
-                            <td class="text-justify">{{ $transaction->userData->name }}</td>
-                            <td class="text-center">{{ $transaction->eventDat->name }}</td>
+                            <td class="text-left">{{ $transaction->userData->name }}</td>
+                            <td class="text-left">{{ $transaction->eventData->name }}</td>
                             <td class="text-center">{{ $transaction->hashid }}</td>
                             <td class="text-center">{{ $transaction->quantity }}</td>
                             <td class="text-center"><img src="assets/img/uploads/{{ $transaction->proof }}" alt=bukti_bayar" width="25px"></td>
@@ -43,11 +43,12 @@
                             <th class="text-center">No</th>
                             <th class="text-center">Nama Pengguna</th>
                             <th class="text-center">Acara</th>
-                            <th class="text-center">Id Ticket</th>
+                            <th class="text-center">Kode Tiket</th>
                             <th class="text-center">Jumlah Tiket</th>
                             <th class="text-center">Bukti Bayar</th>
                             <th class="text-center">Tanggal Bayar</th>
                             <th class="text-center">Status</th>
+                            <th class="text-center">Pembayaran</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </tfoot>
