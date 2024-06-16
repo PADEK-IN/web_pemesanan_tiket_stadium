@@ -11,6 +11,8 @@ class Transaction extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['id_user', 'id_event', 'quantity', 'date', 'proof'];
+
     public function getHashidAttribute()
     {
         return Hashids::encode($this->id);
