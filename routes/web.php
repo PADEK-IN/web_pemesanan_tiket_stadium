@@ -42,8 +42,8 @@ Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
     Route::get('/dashboard', [IndexController::class, 'index'])->name('admin.dashboard');
 
     Route::get('/event', [EventController::class, 'getAllData'])->name('admin.event');
-    Route::get('/event/{id}', [EventController::class, 'show'])->name('admin.event.show');
     Route::get('/event/create', [EventController::class, 'getCreatePage'])->name('admin.event.create');
+    Route::get('/event/{id}', [EventController::class, 'show'])->name('admin.event.show');
     Route::post('/event/create', [EventController::class, 'create']);
 
     Route::get('/category', [CategoryController::class, 'getAllData'])->name('admin.category');
