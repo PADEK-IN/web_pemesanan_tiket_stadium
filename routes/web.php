@@ -30,6 +30,7 @@ Route::middleware(["auth", "verified"])->group(function (){
     Route::post('/event/ticket', [UserEventController::class, 'buyTicket'])->name('event.ticket');
 
     Route::get('/transaction', [UserTransactionController::class, 'getAllData'])->name('transaction');
+    Route::get('/transaction/create/{id}', [UserTransactionController::class, 'createPage'])->name('transaction.create');
 
     Route::get('/profile', [UserProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [UserProfileController::class, 'update'])->name('profile.update');

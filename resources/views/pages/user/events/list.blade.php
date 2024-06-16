@@ -31,7 +31,7 @@
                     <p class="text-muted">{{ $event->quota }}</p>
                     <p class="text-muted">{{ formatRupiah($event->price) }}</p>
                     <div class="text-center">
-                        <a href="#" class="btn btn-primary
+                        <a href="/transaction/create/{{ $event->hashid }}" class="btn btn-primary
                         {{ eventStatus($event->date, $event->time, 'event') }}">
                          {{ $event['isActive']?"Pesan Tiket":"Selesai" }}</a>
                     </div>
