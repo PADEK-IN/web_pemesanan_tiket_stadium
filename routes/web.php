@@ -25,7 +25,8 @@ Route::middleware(["auth", "verified"])->group(function (){
 
     Route::get('/event', [UserEventController::class, 'getAllData'])->name('event');
     Route::get('/event/{id}', [UserEventController::class, 'detail'])->name('event.detail');
-    Route::get('/event/review/{id}', [UserEventController::class, 'review'])->name('event.review');
+    Route::get('/event/review/{id}', [UserEventController::class, 'reviewPage'])->name('event.review');
+    Route::post('/event/review', [UserEventController::class, 'createReview'])->name('event.review.store');
     Route::post('/event/ticket', [UserEventController::class, 'buyTicket'])->name('event.ticket');
 
     Route::get('/transaction', [UserTransactionController::class, 'getAllData'])->name('transaction');

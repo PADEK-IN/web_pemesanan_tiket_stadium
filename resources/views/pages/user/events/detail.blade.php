@@ -1,4 +1,4 @@
-<x-admin-layout>
+<x-user-layout>
     <div class="card">
         <div class="container">
             <div class="card mt-4">
@@ -14,8 +14,8 @@
                             <p><strong>Deskripsi:</strong> {{ $event->description }}</p>
                             <p><strong>Jadwal:</strong> {{ $event->date }} | {{ $event->time }}</p>
                             <p><strong>Kategori:</strong> {{ $event->eventCategory->name }}</p>
-                            <p><strong>Kuota:</strong>{{ $event->quota }}</p>
-                            <p><strong>Harga:</strong>{{ $event->price }}</p>
+                            <p><strong>Kuota:</strong> {{ $event->quota }}</p>
+                            <p><strong>Harga:</strong> {{ formatRupiah( $event->price) }}</p>
                             <p><strong>Status Event:</strong> {{ eventStatus($event->date, $event->time, 'status') }}</p>
                             <div class="text-center">
                                 <a href="#" class="btn btn-primary
@@ -30,4 +30,4 @@
             </div>
         </div>
     </div>
-</x-admin-layout>
+</x-user-layout>

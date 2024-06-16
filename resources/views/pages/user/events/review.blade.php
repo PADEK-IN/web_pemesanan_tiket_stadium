@@ -24,13 +24,13 @@
 
         <h3 class="card-header">Review Acara</h3>
         <div class="card-body">
-            <form action="{{ route('admin.event.create') }}" method="post" id="validationform">
+            <form action="{{ route('event.review.store') }}" method="post" id="validationform">
                 @csrf
-                <input type="number" value="{{ $event->hashid }}" class="d-none" disabled>
                 <div class="form-group row">
                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Acara</label>
                     <div class="col-12 col-sm-8 col-lg-6 rating">
                         <span class="pt-2">{{ $event->name }}</span>
+                        <input type="text" value="{{ $event->hashid }}" name="id_event" class="d-none form-control">
                     </div>
                 </div>
 
@@ -44,28 +44,30 @@
                 <div class="form-group row">
                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Rating</label>
                     <div class="col-12 col-sm-8 col-lg-6 rating">
-                        <input type="radio" id="star5" name="rating" value="5">
+                        <input type="radio" name="rating" value="5" {{ isset($review) && $review->rating == 5 ? 'checked' : '' }} id={{ isset($review)?'':'star5' }} >
                         <label for="star5">&#9733;</label>
-                        <input type="radio" id="star4" name="rating" value="4">
+                        <input type="radio" name="rating" value="4" {{ isset($review) && $review->rating == 4 ? 'checked' : '' }} id={{ isset($review)?'':'star4' }} >
                         <label for="star4">&#9733;</label>
-                        <input type="radio" id="star3" name="rating" value="3">
+                        <input type="radio" name="rating" value="3" {{ isset($review) && $review->rating == 3 ? 'checked' : '' }} id={{ isset($review)?'':'star3' }} >
                         <label for="star3">&#9733;</label>
-                        <input type="radio" id="star2" name="rating" value="2">
+                        <input type="radio" name="rating" value="2" {{ isset($review) && $review->rating == 2 ? 'checked' : '' }} id={{ isset($review)?'':'star2' }} >
                         <label for="star2">&#9733;</label>
-                        <input type="radio" id="star1" name="rating" value="1">
+                        <input type="radio" name="rating" value="1" {{ isset($review) && $review->rating == 1 ? 'checked' : '' }} id={{ isset($review)?'':'star1' }} >
                         <label for="star1">&#9733;</label>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Komentar</label>
                     <div class="col-12 col-sm-8 col-lg-6">
-                        <textarea required="" class="form-control" name="comment"></textarea>
+                        <textarea required class="form-control" name="comment" {{ isset($review) && $review->comment ? 'disabled' : '' }}>{{ $review->comment ?? '' }}</textarea>
                     </div>
                 </div>
                 <div class="form-group row text-right">
                     <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
-                        <button type="submit" class="btn btn-space btn-primary">Submit</button>
-                        <button type="button" class="btn btn-space btn-warning" id="cancelButton">Cancel</button>
+                        @if (!isset($review))
+                            <button type="submit" class="btn btn-space btn-primary">Kirim</button>
+                        @endif
+                        <button type="button" class="btn btn-space btn-warning" id="cancelButton">Kembali</button>
                     </div>
                 </div>
             </form>

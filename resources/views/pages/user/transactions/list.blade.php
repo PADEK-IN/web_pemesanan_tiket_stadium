@@ -32,7 +32,7 @@
                         <tr>
                             <td class="text-center" >{{ $index + 1 }}</td>
                             <td class="text-center">{{ $transaction->hashid }}</td>
-                            <td class="text-justify"><a href="/admin/event/{{ $transaction->eventData->hashid }}">{{ $transaction->eventData->name }}</a></td>
+                            <td class="text-justify"><a href="/event/{{ $transaction->eventData->hashid }}">{{ $transaction->eventData->name }}</a></td>
                             <td class="text-left">{{ formatRupiah($transaction->eventData->price) }}</td>
                             <td class="text-center">{{ $transaction->eventData->date }} | {{ $transaction->eventData->time }}</td>
                             <td class="text-center">{{ eventStatus($transaction->eventData->date, $transaction->eventData->time, 'status') }}</td>
