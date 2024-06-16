@@ -7,9 +7,10 @@ use App\Models\Review;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Vinkla\Hashids\Facades\Hashids;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Validator;
-use Vinkla\Hashids\Facades\Hashids;
 
 class UserEventController extends Controller
 {
@@ -42,7 +43,7 @@ class UserEventController extends Controller
 
     public function reviewPage($id): View
     {
-        $idUser=1;
+        $idUser = Auth::id();
         $idEvent = Hashids::decode($id);
 
         $review = Review::where('id_user', $idUser)
@@ -68,7 +69,7 @@ class UserEventController extends Controller
         }
 
         try {
-            $idUser=1;
+            $idUser = Auth::id();
             $idEvent=Hashids::decode($request->input('id_event'));
 
             $existingReview = Review::where('id_user', $idUser)
@@ -95,11 +96,6 @@ class UserEventController extends Controller
         }
 
         return redirect()->route('transaction')->with('success', 'Berhasil memberikan ulasan.');
-    }
-
-    public function buyTicket():RedirectResponse
-    {
-        return redirect()->route('event')->with('success', 'Berhasil membeli tiket.');
     }
 
 }
