@@ -8,12 +8,13 @@
                         <tr>
                             <th class="text-center px-2" >No</th>
                             <th class="text-center">Nama Pengguna</th>
+                            <th class="text-center">Acara</th>
                             <th class="text-center">Id Ticket</th>
-                            <th class="text-center">Tipe Tiket</th>
                             <th class="text-center">Jumlah Tiket</th>
                             <th class="text-center">Bukti Bayar</th>
                             <th class="text-center">Tanggal Bayar</th>
                             <th class="text-center">Status</th>
+                            <th class="text-center">Validasi</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -22,11 +23,12 @@
                         <tr>
                             <td class="text-center" >{{ $index + 1 }}</td>
                             <td class="text-justify">{{ $transaction->userData->name }}</td>
-                            <td class="text-center">{{ $transaction->ticketData->hashid }}</td>
-                            <td class="text-center">{{ $transaction->ticketData->ticket_type }}</td>
+                            <td class="text-center">{{ $transaction->eventDat->name }}</td>
+                            <td class="text-center">{{ $transaction->hashid }}</td>
                             <td class="text-center">{{ $transaction->quantity }}</td>
                             <td class="text-center"><img src="assets/img/uploads/{{ $transaction->proof }}" alt=bukti_bayar" width="25px"></td>
                             <td class="text-center">{{ $transaction->date }}</td>
+                            <td class="text-center">{{ $transaction->status }}</td>
                             <td class="text-center">{{ $transaction->idValid ? 'Valid' : 'Tidak Valid' }}</td>
                             <td class="text-center" style="padding: 0">
                                 <a href="#" class="mr-2">Edit</a>
@@ -40,8 +42,9 @@
                         <tr>
                             <th class="text-center">No</th>
                             <th class="text-center">Nama Pengguna</th>
+                            <th class="text-center">Acara</th>
                             <th class="text-center">Id Ticket</th>
-                            <th class="text-center">Tipe Tiket</th>
+                            <th class="text-center">Jumlah Tiket</th>
                             <th class="text-center">Bukti Bayar</th>
                             <th class="text-center">Tanggal Bayar</th>
                             <th class="text-center">Status</th>
