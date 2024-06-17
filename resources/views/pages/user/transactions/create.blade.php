@@ -31,6 +31,7 @@
                     <div class="col-12 col-sm-8 col-lg-6 rating">
                         <span class="pt-2">{{ $event->name }}</span>
                         <input type="text" value="{{ $event->hashid }}" name="id_event" class="d-none form-control">
+                        <input type="text" value="{{ $event->quota }}" name="quota" class="d-none form-control">
                     </div>
                 </div>
 

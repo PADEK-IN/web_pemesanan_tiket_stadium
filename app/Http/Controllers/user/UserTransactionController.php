@@ -71,13 +71,21 @@ class UserTransactionController extends Controller
             $idUser = Auth::id();
             $idEvent=Hashids::decode($request->input('id_event'));
 
-            $event = Event::find($idEvent);
             $totalTransaction = Transaction::where('id_event', $idEvent[0])->count();
 
-            if($totalTransaction >= $event->quota){
+            if($totalTransaction >= $request->input('quota')){
                 return redirect()->back()
                                 ->withErrors('error', 'Maaf, kuota acara telah penuh')
                                 ->withInput();
+            }
+
+            $isBuy = Transaction::where('id_user', $idUser)
+                                ->where('id_event', $idEvent[0])
+                                ->exists();
+
+            if ($isBuy) {
+            return redirect()->back()
+                            ->withErrors(['error' => 'Maaf, kamu sudah membeli tiket untuk acara ini.']);
             }
 
             Transaction::create([
