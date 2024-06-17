@@ -15,7 +15,7 @@ class EventController extends Controller
 {
     public function getAllData(): View
     {
-        $events = Event::orderByDesc('datetime')->get();
+        $events = Event::orderByDesc('schedule')->get();
         return view('pages.admin.events.list', compact('events'));
     }
 
