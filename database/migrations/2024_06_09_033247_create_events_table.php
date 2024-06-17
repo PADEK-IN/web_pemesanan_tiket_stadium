@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name', 50);
             $table->text('description');
             $table->foreignId('id_category')->constrained(table:'categories',indexName:'event_id_category');
-            $table->string('image', 150)->default('assets/img/blank.jpg');
+            $table->string('image', 150)->nullable();
             $table->timestamp('schedule');
             $table->integer('quota');
             $table->decimal('price',10,2);
