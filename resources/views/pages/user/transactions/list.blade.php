@@ -31,7 +31,7 @@
                         @foreach ($transactions as $index => $transaction)
                         <tr>
                             <td class="text-center" >{{ $index + 1 }}</td>
-                            <td class="text-center">{{ $transaction->id }}</td>
+                            <td class="text-center">{{ $transaction->hashid }}</td>
                             <td class="text-justify"><a href="/event/{{ $transaction->eventData->hashid }}">{{ $transaction->eventData->name }}</a></td>
                             <td class="text-left">{{ formatRupiah($transaction->eventData->price) }}</td>
                             <td class="text-center">{{ $transaction->eventData->schedule }}</td>

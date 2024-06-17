@@ -4,9 +4,11 @@ namespace App\Http\Controllers\user;
 
 use App\Models\Event;
 use App\Models\Review;
+use App\Models\Transaction;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 use Vinkla\Hashids\Facades\Hashids;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
@@ -16,9 +18,15 @@ class UserEventController extends Controller
 {
     public function getAllData(): View
     {
-        $events = Event::orderByDesc('events.date')->orderByDesc('events.time')->get();
+        // $events = Event::orderByDesc('schedule')->get();
+        $events = Event::with('eventTransaction')
+                        ->select('events.*', DB::raw('COUNT(transactions.id) as totalTransaction'))
+                        ->leftJoin('transactions', 'events.id', '=', 'transactions.id_event')
+                        ->groupBy('events.id')
+                        ->orderBy('events.schedule', 'desc')
+                        ->get();
 
-        return view('pages.user.events.list', ['events' => $events ]);
+        return view('pages.user.events.list', compact('events'));
     }
 
     public function getCreatePage(): View
@@ -37,8 +45,10 @@ class UserEventController extends Controller
             return redirect()->route('event')->with('error', 'Acara tidak ditemukan.');
         }
 
+        $totalTransaction = Transaction::where('id_event', $validId[0])->count();
+
         // Return a view with the event data
-        return view('pages.user.events.detail', compact('event'));
+        return view('pages.user.events.detail', compact('event', 'totalTransaction'));
     }
 
     public function reviewPage($id): View

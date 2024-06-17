@@ -16,8 +16,9 @@ class UserTransactionController extends Controller
 {
     public function getAllData(): View
     {
-
+        $idUser = Auth::id();
         $transactions = Transaction::join('events', 'events.id', '=', 'transactions.id_event')
+                                    ->where('transactions.id_user', $idUser)
                                     ->select('transactions.*')
                                     ->orderByDesc('created_at')
                                     ->get();
@@ -25,12 +26,20 @@ class UserTransactionController extends Controller
         return view('pages.user.transactions.list', ['transactions' => $transactions]);
     }
 
-    public function createPage($id): View
+    public function createPage($id)
     {
         $idUser = Auth::id();
         $idEvent = Hashids::decode($id);
 
         $event = Event::find($idEvent[0]);
+
+        $isHaveQuota = Transaction::where('id_event', $idEvent)->count();
+
+        if($isHaveQuota >= $event->quota) {
+            return redirect()->back()
+                            ->with('error', 'Maaf kuota tiket sudah penuh.')
+                            ->withInput();
+        }
 
         return view('pages.user.transactions.create', compact('event'));
     }
@@ -52,8 +61,8 @@ class UserTransactionController extends Controller
         if ($request->hasFile('proof')) {
             $image = $request->file('proof');
             $imageName = time() . '_' . $image->getClientOriginalName();
-            $image->storeAs('/event', $imageName, 'public_custom');
-            $imagePath = 'assets/img/event/'.$imageName;
+            $image->storeAs('/uploads', $imageName, 'public_custom');
+            $imagePath = 'assets/img/uploads/'.$imageName;
         } else {
             $imagePath = null; // Default image if no image uploaded
         }
@@ -61,6 +70,15 @@ class UserTransactionController extends Controller
         try {
             $idUser = Auth::id();
             $idEvent=Hashids::decode($request->input('id_event'));
+
+            $event = Event::find($idEvent);
+            $totalTransaction = Transaction::where('id_event', $idEvent[0])->count();
+
+            if($totalTransaction >= $event->quota){
+                return redirect()->back()
+                                ->withErrors('error', 'Maaf, kuota acara telah penuh')
+                                ->withInput();
+            }
 
             Transaction::create([
                 'id_user' => $idUser,
@@ -75,7 +93,7 @@ class UserTransactionController extends Controller
                             ->withInput();
         }
 
-        return redirect()->route('transaction')->with('success', 'Berhasil melakukan pemesanan. Harap tunggu validasi 1x24 jam ya.');
+        return redirect()->route('event')->with('success', 'Berhasil melakukan pemesanan. Harap tunggu validasi 1x24 jam ya.');
     }
 
 }

@@ -1,5 +1,26 @@
 <x-user-layout>
     <div class="bg-white pl-2 py-2">
+        <!-- Error Messages -->
+        @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Whoops! Something went wrong.</strong>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @elseif (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('error') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
         <!-- Success Message -->
         @if (session('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -16,25 +37,33 @@
                 <input type="text" id="searchInput" placeholder="Search..." class="form-control mb-3">
             </div>
         </div>
-
+        <div>
+            {{-- {{ dd($events) }} --}}
+        </div>
         <div id="cardContainer" class="d-flex flex-wrap">
             @foreach($events as $index => $event)
             <div class="card card-list m-2" data-title="{{ strtolower($event->name) }}" data-description="{{ strtolower($event->description) }}">
-                <div class="card-img-top">
+                <div class="card-img-top position-relative">
                     <img class="img-fluid card-img" src="{{ asset('assets/img/event').'/'.$event->image }}" alt="Gambar Event">
+                    <div class="position-absolute" style="top: 10px; left: 10px; color: white; background-color: rgba(0, 0, 0, 0.5); padding: 2px;">
+                        {{ $event->eventCategory->name }}
+                    </div>
+                    <div class="position-absolute" style="bottom: 10px; left: 10px; color: white; background-color: rgba(0, 0, 0, 0.5); padding: 2px;">
+                        {{ $event->totalTransaction }}/{{ $event->quota }}
+                    </div>
+                    <div class="position-absolute" style="bottom: 10px; right: 10px; color: white; background-color: rgba(0, 0, 0, 0.5); padding: 2px;">
+                        {{ formatRupiah($event->price) }}
+                    </div>
                 </div>
-                <div class="card-body">
+                <div class="card-body d-flex flex-column" style="min-height: 200px;">
                     <h3 class="card-title"><a href="/event/{{ $event->hashid }}">{{ $event->name }}</a></h3>
                     <p class="card-text">{{ Str::limit($event->description, 50) }}</p>
                     <p class="text-muted">{{ $event->schedule }}</p>
-                    <p class="text-muted">{{ $event->eventCategory->name }}</p>
-                    <p class="text-muted">{{ $event->quota }}</p>
-                    <p class="text-muted">{{ formatRupiah($event->price) }}</p>
-                    <div class="text-center">
-                        <a href="/transaction/create/{{ $event->hashid }}" class="btn btn-primary
-                        {{ eventStatus($event->schedule, 'event') }}">
-                         {{ $event['isActive']?"Pesan Tiket":"Selesai" }}</a>
-                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="/transaction/create/{{ $event->hashid }}" class="btn btn-primary {{ eventStatus($event->schedule, 'event') }}">
+                        {{ $event['isActive'] ? "Pesan Tiket" : "Selesai" }}
+                    </a>
                 </div>
             </div>
             @endforeach
