@@ -28,12 +28,11 @@
                             <td class="text-center">{{ $user["role"] }}</td>
                             <td class="text-center" style="padding: 0">
                                 @if ($user->role == 'user')
-                                <a href="{{ route('admin.user.upgrade', $user->hashid) }}" class="mr-2">Upgrade</a>
+                                <a href="{{ route('admin.user.upgrade', $user->hashid) }}" class="mr-2 btn btn-sm btn-info">Upgrade</a>
                                 @else
-                                <a href="{{ route('admin.user.downgrade', $user->hashid) }}" class="mr-2">Downgrade</a>
+                                <a href="{{ route('admin.user.downgrade', $user->hashid) }}" class="mr-2 btn btn-sm btn-warning">Downgrade</a>
                                 @endif
-                                <span>|</span>
-                                <a href="{{ route('admin.user.destroy', $user->hashid) }}" class="ml-2">Delete</a>
+                                <a href="{{ route('admin.user.destroy', $user->hashid) }}" class="ml-2 btn btn-sm btn-danger">Delete</a>
                             </td>
                         </tr>
                         @endforeach
