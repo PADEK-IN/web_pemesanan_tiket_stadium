@@ -1,30 +1,8 @@
 <x-admin-layout>
     <div class="card">
-        <!-- Error Messages -->
-        @if ($errors->any())
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>Whoops! Something went wrong.</strong>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        @elseif (session('error'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {{ session('error') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        @endif
-
         <h3 class="card-header">Edit Acara</h3>
         <div class="card-body">
-            <form action="#" method="#" id="validationform" enctype="multipart/form-data">
+            <form action="/admin/event/update/{{ $event->hashid }}" method="post" id="validationform" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group row">
                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Nama</label>
@@ -67,7 +45,7 @@
                 <div class="form-group row">
                     <label class="col-12 col-sm-3 col-form-label text-sm-right">Gambar Acara</label>
                     <div class="col-12 col-sm-8 col-lg-6 flex flex-col">
-                        <img src="{{ $event->image }}" alt="gambar acara" width="150px" class="mb-2">
+                        <img src="{{ asset('assets/img/event/'.$event->image) }}" alt="gambar acara" width="150px" class="mb-2">
                         <input type="file" id="image" name="image" class="form-control-file">
                     </div>
                 </div>

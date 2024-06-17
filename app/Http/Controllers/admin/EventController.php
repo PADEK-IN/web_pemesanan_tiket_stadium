@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Models\Category;
 use App\Models\Event;
+use App\Models\Category;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Validator;
 use Vinkla\Hashids\Facades\Hashids;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class EventController extends Controller
 {
@@ -64,9 +65,8 @@ class EventController extends Controller
             $image = $request->file('image');
             $imageName = time() . '_' . $image->getClientOriginalName();
             $image->storeAs('/event', $imageName, 'public_custom');
-            $imagePath = 'assets/img/event/'.$imageName;
         } else {
-            $imagePath = 'assets/img/blank.jpg'; // Default image if no image uploaded
+            $imageName = null;
         }
 
         // Create and save the event
@@ -76,7 +76,7 @@ class EventController extends Controller
                 'name' => $request->input('name'),
                 'description' => $request->input('description'),
                 'id_category' => $idCategory[0],
-                'image' => $imagePath,
+                'image' => $imageName,
                 'schedule' => $request->input('schedule'),
                 'quota' => $request->input('quota'),
                 'price' => $request->input('price'),
@@ -106,5 +106,56 @@ class EventController extends Controller
         // Return a view with the event data
         return view('pages.admin.events.edit', compact('event', 'categories'));
     }
+
+    public function update(Request $request, $id): RedirectResponse
+    {
+        try {
+            // Validate the incoming request data
+            $validator = Validator::make($request->all(), [
+                'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048', // max 2MB
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()
+                                ->withErrors($validator)
+                                ->withInput();
+            }
+
+            //get product by ID
+            $validId = Hashids::decode($id);
+            $event = Event::findOrFail($validId[0]);
+
+            //check if image is uploaded
+            if ($request->hasFile('image')) {
+                $filePath = 'event/' . $event['image'];
+                Storage::disk('public_custom')->delete($filePath);
+
+                $image = $request->file('image');
+                $imageName = time() . '_' . $image->getClientOriginalName();
+                $image->storeAs('/event', $imageName, 'public_custom');
+            } else {
+                $imageName = $event->image;
+            }
+
+            $idCategory = Hashids::decode($request->input('id_category'));
+
+            $event->name = $request->input('name');
+            $event->description = $request->input('description');
+            $event->id_category = $idCategory[0];
+            $event->image = $imageName;
+            $event->schedule = $request->input('schedule');
+            $event->quota = $request->input('quota');
+            $event->price = $request->input('price');
+
+            $event->save();
+
+            return redirect()->route('admin.event')->with('success', 'Data acara berhasil diperbarui.');
+        } catch (\Exception $e) {
+            return redirect()->back()
+                            ->with('error', 'Server error, maaf, gagal memperbarui data acara.')
+                            ->withInput();
+        }
+    }
+
 
 }
