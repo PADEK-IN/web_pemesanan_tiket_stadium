@@ -35,6 +35,10 @@ Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
     Route::get('/review', [ReviewController::class, 'getAllData'])->name('admin.review');
 
     Route::get('/user', [UserController::class, 'getAllData'])->name('admin.user');
+    Route::get('/user/{id}', [UserController::class, 'detailPage'])->name('admin.user.detail');
+    Route::get('/user/upgrade/{id}', [UserController::class, 'upgrade'])->name('admin.user.upgrade');
+    Route::get('/user/downgrade/{id}', [UserController::class, 'downgrade'])->name('admin.user.downgrade');
+    Route::get('/user/destroy/{id}', [UserController::class, 'destroy'])->name('admin.user.destroy');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('admin.profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('admin.profile.update');
