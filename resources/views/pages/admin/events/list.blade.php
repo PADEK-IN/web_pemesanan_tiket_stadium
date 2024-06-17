@@ -20,9 +20,9 @@
                         <tr>
                             <th class="text-center px-2" >No</th>
                             <th class="text-center">Judul</th>
-                            <th class="text-center">Deskripsi</th>
-                            <th class="text-center">Kategori</th>
-                            <th class="text-center">Jadwal</th>>
+                            {{-- <th class="text-center">Deskripsi</th>
+                            <th class="text-center">Kategori</th> --}}
+                            <th class="text-center">Jadwal</th>
                             <th class="text-center">Kuota</th>
                             <th class="text-center">Harga</th>
                             <th class="text-center">Status</th>
@@ -34,14 +34,14 @@
                         <tr>
                             <td class="text-center" >{{ $index + 1 }}</td>
                             <td class="text-justify"><a href="/admin/event/{{ $event->hashid }}">{{ $event->name }}</a></td>
-                            <td class="text-justify">{{ Str::limit($event['description'], 25) }}</td>
-                            <td class="text-center">{{ $event->eventCategory->name }}</td>
+                            {{-- <td class="text-justify">{{ Str::limit($event['description'], 25) }}</td>
+                            <td class="text-center">{{ $event->eventCategory->name }}</td> --}}
                             <td class="text-center">{{ $event->schedule }}</td>
                             <td class="text-center">{{ $event->quota }}</td>
                             <td class="text-left">{{ formatRupiah($event->price) }}</td>
                             <td class="text-center">{{ $event['isActive']?"Aktif":"Selesai" }}</td>
                             <td class="text-center" style="padding: 0">
-                                <a href="#" class="mr-2">Edit</a>
+                                <a href="/admin/event/edit/{{ $event->hashid }}" class="mr-2">Edit</a>
                                 <span>|</span>
                                 <a href="#" class="ml-2">Delete</a>
                             </td>
@@ -52,8 +52,8 @@
                         <tr>
                             <th class="text-center">No</th>
                             <th class="text-center">Judul</th>
-                            <th class="text-center">Deskripsi</th>
-                            <th class="text-center">Kategori</th>
+                            {{-- <th class="text-center">Deskripsi</th>
+                            <th class="text-center">Kategori</th> --}}
                             <th class="text-center">Jadwal</th>
                             <th class="text-center">Kuota</th>
                             <th class="text-center">Harga</th>

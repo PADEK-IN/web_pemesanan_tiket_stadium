@@ -16,7 +16,8 @@ Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
 
     Route::get('/event', [EventController::class, 'getAllData'])->name('admin.event');
     Route::get('/event/create', [EventController::class, 'getCreatePage'])->name('admin.event.create');
-    Route::get('/event/{id}', [EventController::class, 'show'])->name('admin.event.show');
+    Route::get('/event/{id}', [EventController::class, 'detailPage']);
+    Route::get('/event/edit/{id}', [EventController::class, 'editPage']);
     Route::post('/event/create', [EventController::class, 'create']);
 
     Route::get('/category', [CategoryController::class, 'getAllData'])->name('admin.category');
@@ -24,7 +25,7 @@ Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
     Route::post('/category/create', [CategoryController::class, 'create'])->name('admin.category.create');
 
     Route::get('/transaction', [TransactionController::class, 'getAllData'])->name('admin.transaction');
-    Route::get('/transaction/check/{id}', [TransactionController::class, 'detail'])->name('admin.transaction.detail');
+    Route::get('/transaction/check/{id}', [TransactionController::class, 'detail']);
 
     Route::get('/review', [ReviewController::class, 'getAllData'])->name('admin.review');
 
