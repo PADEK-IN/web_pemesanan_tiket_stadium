@@ -1,14 +1,5 @@
 <x-admin-layout>
     <div class="card">
-        <!-- Success Message -->
-        @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('success') }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        @endif
         <div class="d-flex justify-content-between m-2">
             <h5 class="card-header">Semua Data Kategori</h5>
             <a href="{{ route('admin.category.create') }}" class="btn btn-space btn-primary">Buat Kategori</a>
