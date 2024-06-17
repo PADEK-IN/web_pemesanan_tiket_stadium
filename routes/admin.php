@@ -24,6 +24,9 @@ Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
 
     Route::get('/category', [CategoryController::class, 'getAllData'])->name('admin.category');
     Route::get('/category/create', [CategoryController::class, 'getCreatePage'])->name('admin.category.create');
+    Route::get('/category/edit/{id}', [CategoryController::class, 'editPage'])->name('admin.category.edit');
+    Route::get('/category/destroy/{id}', [CategoryController::class, 'destroy'])->name('admin.category.destroy');
+    Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('admin.category.update');
     Route::post('/category/create', [CategoryController::class, 'create'])->name('admin.category.create');
 
     Route::get('/transaction', [TransactionController::class, 'getAllData'])->name('admin.transaction');

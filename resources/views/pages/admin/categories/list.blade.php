@@ -20,9 +20,9 @@
                             <td class="text-center" >{{ $index + 1 }}</td>
                             <td class="text-justify">{{ $category->name }}</td>
                             <td class="text-center" style="padding: 0">
-                                <a href="#" class="mr-2">Edit</a>
+                                <a href="{{ route('admin.category.edit', $category->hashid) }}" class="mr-2">Edit</a>
                                 <span>|</span>
-                                <a href="#" class="ml-2">Delete</a>
+                                <a href="{{ route('admin.category.destroy', $category->hashid) }}" class="ml-2">Delete</a>
                             </td>
                         </tr>
                         @endforeach
