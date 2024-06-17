@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 50);
             $table->text('description');
-            $table->foreignId('id_category')->constrained(table:'categories',indexName:'event_id_category');
+            $table->foreignId('id_category')->nullable()->constrained(table:'categories',indexName:'event_id_category')->onDelete('set null');
             $table->string('image', 150)->nullable();
             $table->timestamp('schedule');
             $table->integer('quota');
