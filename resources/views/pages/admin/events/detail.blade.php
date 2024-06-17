@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-4">
-                            <img src="{{ asset($event->image) }}" alt="{{ $event->name }}" class="img-fluid">
+                            <img src="{{ asset('assets/img/event/'.$event->image) }}" alt="{{ $event->name }}" class="img-fluid">
                         </div>
                         <div class="col-md-8">
                             <p><strong>Deskripsi:</strong> {{ $event->description }}</p>
