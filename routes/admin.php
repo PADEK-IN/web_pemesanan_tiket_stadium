@@ -30,7 +30,8 @@ Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
     Route::post('/category/create', [CategoryController::class, 'create'])->name('admin.category.create');
 
     Route::get('/transaction', [TransactionController::class, 'getAllData'])->name('admin.transaction');
-    Route::get('/transaction/check/{id}', [TransactionController::class, 'detail']);
+    Route::get('/transaction/check/{id}', [TransactionController::class, 'detail'])->name('admin.transaction.check');
+    Route::post('/transaction/validation/{id}', [TransactionController::class, 'validation'])->name('admin.transaction.validation');
 
     Route::get('/review', [ReviewController::class, 'getAllData'])->name('admin.review');
 

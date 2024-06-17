@@ -11,7 +11,7 @@ class Transaction extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id_user', 'id_event', 'quantity', 'date', 'proof'];
+    protected $fillable = ['id_user', 'id_event', 'quantity', 'proof', 'status', 'isValid'];
 
     public function getHashidAttribute()
     {
