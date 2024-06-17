@@ -34,7 +34,7 @@
                             <td class="text-center" style="padding: 0">
                                 <a href="/admin/event/edit/{{ $event->hashid }}" class="mr-2">Edit</a>
                                 <span>|</span>
-                                <a href="#" class="ml-2">Delete</a>
+                                <a href="{{ route('admin.event.destroy', $event->hashid) }}" class="ml-2">Delete</a>
                             </td>
                         </tr>
                         @endforeach

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Models\Event;
 use App\Models\Category;
+use App\Models\Transaction;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -49,7 +50,7 @@ class EventController extends Controller
             'description' => 'required|string',
             'id_category' => 'required|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // max 2MB
-            'schedule' => 'required|date_format:Y-m-d H:i:s',
+            'schedule' => 'required',
             'quota' => 'required|integer',
             'price' => 'required|integer',
         ]);
@@ -157,5 +158,34 @@ class EventController extends Controller
         }
     }
 
+    public function destroy($id): RedirectResponse
+    {
+        try {
+            //get product by ID
+            $validId = Hashids::decode($id);
+            $event = Event::findOrFail($validId[0]);
+
+            $transaction = Transaction::where('id_event', $validId)->first();
+
+            if($transaction){
+                return redirect()->back()
+                                ->with('error', 'Maaf, data acara tidak dapat dihapus karena sudah ada transaksi.')
+                                ->withInput();
+            }
+
+            //delete image
+            Storage::disk('public_custom')->delete('event/' . $event['image']);
+
+            //delete product
+            $event->delete();
+
+            //redirect to index
+            return redirect()->route('admin.event')->with(['success' => 'Data Acara Berhasil Dihapus!']);
+        } catch (\Exception $e) {
+            return redirect()->back()
+                            ->with('error', 'Server error, maaf gagal menghapus data acara.'. $e->getMessage())
+                            ->withInput();
+        }
+    }
 
 }

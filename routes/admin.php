@@ -18,6 +18,7 @@ Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
     Route::get('/event/create', [EventController::class, 'getCreatePage'])->name('admin.event.create');
     Route::get('/event/{id}', [EventController::class, 'detailPage']);
     Route::get('/event/edit/{id}', [EventController::class, 'editPage']);
+    Route::get('/event/destroy/{id}', [EventController::class, 'destroy'])->name('admin.event.destroy');
     Route::post('/event/update/{id}', [EventController::class, 'update']);
     Route::post('/event/create', [EventController::class, 'create']);
 
