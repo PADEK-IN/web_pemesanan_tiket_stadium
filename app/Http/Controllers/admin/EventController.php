@@ -183,7 +183,7 @@ class EventController extends Controller
             return redirect()->route('admin.event')->with(['success' => 'Data Acara Berhasil Dihapus!']);
         } catch (\Exception $e) {
             return redirect()->back()
-                            ->with('error', 'Server error, maaf gagal menghapus data acara.'. $e->getMessage())
+                            ->with('error', 'Server error, maaf gagal menghapus data acara.')
                             ->withInput();
         }
     }
