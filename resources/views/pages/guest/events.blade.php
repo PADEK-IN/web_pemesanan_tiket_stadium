@@ -3,7 +3,7 @@
     <div style="width: 100%; height: 90px; background-color: black;"  ></div>
 
     <main id="main">
-        <section class="section-with-bg wow fadeInUp">
+        <section id="event" class="section-with-bg wow fadeInUp">
 
         <div class="container">
             <div class="section-header">
