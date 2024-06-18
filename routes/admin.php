@@ -7,10 +7,11 @@ use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\ReviewController;
 use App\Http\Controllers\admin\TransactionController;
 use App\Http\Controllers\admin\UserController;
+use App\Http\Middleware\isValidAdmin;
 use Illuminate\Support\Facades\Route;
 
 // Admin Routes
-Route::prefix("admin")->middleware(["auth", "verified"])->group(function (){
+Route::prefix("admin")->middleware(["auth", "verified", isValidAdmin::class])->group(function (){
 
     Route::get('/dashboard', [IndexController::class, 'index'])->name('admin.dashboard');
 

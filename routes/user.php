@@ -4,10 +4,11 @@ use App\Http\Controllers\user\UserEventController;
 use App\Http\Controllers\user\UserIndexController;
 use App\Http\Controllers\user\UserProfileController;
 use App\Http\Controllers\user\UserTransactionController;
+use App\Http\Middleware\isValidUser;
 use Illuminate\Support\Facades\Route;
 
 // User Routes
-Route::middleware(["auth", "verified"])->group(function (){
+Route::middleware(["auth", "verified", isValidUser::class])->group(function (){
 
     Route::get('/dashboard', [UserIndexController::class, 'index'])->name('dashboard');
 
