@@ -44,7 +44,7 @@
                                     <h5 class="mb-0 text-white nav-user-name">{{ Auth::user()->name }}</h5>
                                     <span><i>{{ Auth::user()->email }}</i></span>
                                 </div>
-                                <a class="dropdown-item" href="{{ route('profile.edit') }}"><i class="fas fa-user mr-2"></i>Profile</a>
+                                <a class="dropdown-item" href="{{ route('admin.profile.edit') }}"><i class="fas fa-user mr-2"></i>Profile</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"><i class="fas fa-power-off mr-2"></i>Logout</a>
                             </div>
                         </li>
