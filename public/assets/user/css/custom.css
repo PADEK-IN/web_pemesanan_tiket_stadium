@@ -1,0 +1,51 @@
+.card-img-top {
+    height: 300px; /* Set a fixed height for the card image */
+    overflow: hidden; /* Hide overflow to ensure images fit within the fixed height */
+}
+
+.card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Ensures the image covers the entire container while maintaining aspect ratio */
+    object-position: center; /* Center the image within the container */
+}
+
+.card-list {
+    flex: 1 1 calc(33.333% - 20px); /* Ukuran card (lebar 33.333% dengan margin 10px di setiap sisi) */
+    box-sizing: border-box;
+    margin: 10px;
+    max-width: calc(33.333% - 20px); /* Pastikan card tidak lebih besar dari 33.333% */
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination li {
+    margin: 0 5px;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse; /* this is the magic */
+    justify-content: flex-end;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.rating label:hover,
+.rating label:hover ~ label { /* reason why the stars are in reverse order in the html */
+    color: orange;
+}
+
+.rating input:checked ~ label {
+    color: orange;
+}
