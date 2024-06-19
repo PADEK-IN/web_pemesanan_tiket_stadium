@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,11 +18,13 @@ class EventFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->sentence(4),
+            'name' => fake()->sentence(4),
             'description' => fake()->sentence(10),
-            'image' => fake()->image("C:\laragon\www\myproject\web_pemesanan_tiket_stadium\public\assets\img\uploads",640,480,null,false),
-            'date' => fake()->dateTimeBetween("now", "+3 months")->format('Y-m-d'),
-            'time' => fake()->time("H:i"),
+            'id_category' => Category::factory(),
+            'image' => fake()->image("C:\laragon\www\myproject\web_pemesanan_tiket_stadium\public\assets\img\\event",640,480,null,false),
+            'schedule' => fake()->dateTimeBetween("now", "+1 months")->format('Y-m-d H:i:s'),
+            'price' => (fake()->randomNumber(2))*50000,
+            'quota' => fake()->randomNumber(3),
         ];
     }
 }

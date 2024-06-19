@@ -9,22 +9,22 @@ use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserIndexController extends Controller
 {
     public function index(): View
     {
-        $qtyUser = User::count();
-        $qtyEvent = Event::count();
-        $qtyReview = Review::count();
-        $qtyTransaction = Transaction::all()->sum(function ($transaction) {
-            $price = $transaction->ticketData->price;
+        $idUser = Auth::id();
+        $qtyEvent = Transaction::where('id_user', $idUser)->count();
+        $qtyReview = Review::where('id_user', $idUser)->count();
+        $qtyTransaction = Transaction::all()->where('id_user', $idUser)->sum(function ($transaction) {
+            $price = $transaction->eventData->price;
             $quantity = $transaction->quantity;
             return $price*$quantity;
         });
 
         $qty = [
-            'user' => $qtyUser,
             'event' => $qtyEvent,
             'review' => $qtyReview,
             'transaction' => $qtyTransaction,

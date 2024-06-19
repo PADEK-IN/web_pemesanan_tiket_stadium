@@ -19,7 +19,7 @@ class ReviewFactory extends Factory
         return [
             'id_event' => 1,
             'id_user' => 1,
-            'rating'=>fake()->numberBetween(0,5),
+            'rating'=>fake()->numberBetween(1,5),
             'comment'=>fake()->sentence(15)
         ];
     }

@@ -11,6 +11,8 @@ class Review extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['id_user', 'id_event', 'rating', 'comment'];
+
     public function getHashidAttribute()
     {
         return Hashids::encode($this->id);

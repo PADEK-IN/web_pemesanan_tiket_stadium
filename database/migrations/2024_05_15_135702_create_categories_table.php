@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tickets', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_event')->constrained(table: 'events', indexName:'tickets_id_event');
-            $table->enum('ticket_type', ['reguler', 'vip']);
-            $table->decimal('price',10,2);
-            $table->integer('quota');
+            $table->string('name', 50);
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tickets');
+        Schema::dropIfExists('categories');
     }
 };

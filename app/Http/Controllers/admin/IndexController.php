@@ -18,7 +18,7 @@ class IndexController extends Controller
         $qtyEvent = Event::count();
         $qtyReview = Review::count();
         $qtyTransaction = Transaction::all()->sum(function ($transaction) {
-            $price = $transaction->ticketData->price;
+            $price = $transaction->eventData->price;
             $quantity = $transaction->quantity;
             return $price*$quantity;
         });

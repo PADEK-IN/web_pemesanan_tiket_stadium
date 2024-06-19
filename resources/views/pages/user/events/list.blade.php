@@ -1,14 +1,5 @@
 <x-user-layout>
     <div class="bg-white pl-2 py-2">
-        <!-- Success Message -->
-        @if (session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('success') }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        @endif
         <div class="d-flex justify-content-between m-2">
             <h4>List Acara</h4>
             <div class="d-flex">
@@ -16,22 +7,33 @@
                 <input type="text" id="searchInput" placeholder="Search..." class="form-control mb-3">
             </div>
         </div>
-
+        <div>
+            {{-- {{ dd($events) }} --}}
+        </div>
         <div id="cardContainer" class="d-flex flex-wrap">
             @foreach($events as $index => $event)
-            <div class="card card-list m-2" data-title="{{ strtolower($event->title) }}" data-description="{{ strtolower($event->description) }}">
-                <div class="card-img-top">
-                    <img class="img-fluid card-img" src="{{ asset($event->image) }}" alt="Card image cap">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title"><a href="/event/{{ $event->id }}">{{ $event->title }}</a></h3>
-                    <p class="card-text">{{ Str::limit($event->description, 50) }}</p>
-                    <p class="text-muted">{{ $event->date }} | {{ $event->time }}</p>
-                    <div class="text-center">
-                        <a href="#" class="btn btn-primary
-                        {{ eventStatus($event->date, $event->time, 'event') }}">
-                         {{ $event['isActive']?"Pesan Tiket":"Selesai" }}</a>
+            <div class="card card-list m-2" data-title="{{ strtolower($event->name) }}" data-description="{{ strtolower($event->description) }}">
+                <div class="card-img-top position-relative">
+                    <img class="img-fluid card-img" src="{{ asset('assets/img/event').'/'.$event->image }}" alt="Gambar Event">
+                    <div class="position-absolute" style="top: 10px; left: 10px; color: white; background-color: rgba(0, 0, 0, 0.5); padding: 2px;">
+                        {{ $event->eventCategory->name }}
                     </div>
+                    <div class="position-absolute" style="bottom: 10px; left: 10px; color: white; background-color: rgba(0, 0, 0, 0.5); padding: 2px;">
+                        {{ $event->totalTransaction }}/{{ $event->quota }}
+                    </div>
+                    <div class="position-absolute" style="bottom: 10px; right: 10px; color: white; background-color: rgba(0, 0, 0, 0.5); padding: 2px;">
+                        {{ formatRupiah($event->price) }}
+                    </div>
+                </div>
+                <div class="card-body d-flex flex-column" style="min-height: 200px;">
+                    <h3 class="card-title"><a href="/event/{{ $event->hashid }}">{{ $event->name }}</a></h3>
+                    <p class="card-text">{{ Str::limit($event->description, 50) }}</p>
+                    <p class="text-muted">{{ $event->schedule }}</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="/transaction/create/{{ $event->hashid }}" class="btn btn-primary {{ eventStatus($event->schedule, 'event') }}">
+                        {{ $event['isActive'] ? "Pesan Tiket" : "Selesai" }}
+                    </a>
                 </div>
             </div>
             @endforeach

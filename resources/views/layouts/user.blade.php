@@ -39,7 +39,7 @@
                             <p style="font-size: 1.1rem; margin-right:10px; color:black;">{{ Auth::user()->name }}</p>
                         </div>
                         <li class="nav-item dropdown nav-user">
-                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('assets/img/user.png') }}" alt="" class="user-avatar-lg rounded-circle"></a>
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('assets/img/user/'.Auth::user()->image) }}" alt="user-profile" class="user-avatar-lg rounded-circle"></a>
                             <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                                 <div class="nav-user-info">
                                     <h5 class="mb-0 text-white nav-user-name">{{ Auth::user()->name }}</h5>
@@ -107,7 +107,36 @@
                     </div>
                 </div>
                 <!-- end pageheader -->
-
+                <!-- Error Messages -->
+                @if ($errors->any())
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Whoops! Something went wrong.</strong>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @elseif (session('error'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('error') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @endif
+                <!-- Success Message -->
+                @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                @endif
                 <!-- content -->
                 {{ $slot }}
                 <!-- end content -->
@@ -141,13 +170,13 @@
             setTimeout(function() {
                 const alerts = document.querySelectorAll('.alert');
                 alerts.forEach(function(alert) {
-                    alert.style.transition = 'opacity 0.5s ease';
+                    alert.style.transition = 'opacity 1s ease';
                     alert.style.opacity = '0';
                     setTimeout(function() {
                         alert.style.display = 'none';
-                    }, 500);
+                    }, 1000);
                 });
-            }, 2000); // 2 seconds
+            }, 2500); // 2,5 seconds
         });
         //pagination and search card event
         $(document).ready(function() {

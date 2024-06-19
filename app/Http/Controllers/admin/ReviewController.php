@@ -11,6 +11,7 @@ class ReviewController
 {
     public function getAllData(): View
     {
-        return view('pages.admin.reviews.list', ['reviews' => Review::all()]);
+        $reviews = Review::orderByDesc('created_at')->get();
+        return view('pages.admin.reviews.list', compact('reviews'));
     }
 }

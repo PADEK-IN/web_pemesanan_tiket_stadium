@@ -1,7 +1,5 @@
 <?php
 
-use Carbon\Carbon;
-
 if (!function_exists('formatRupiah')) {
     function formatRupiah($number)
     {
@@ -10,13 +8,10 @@ if (!function_exists('formatRupiah')) {
 }
 
 if (!function_exists('eventStatus')) {
-    function eventStatus($eventDate, $eventTime, $forWhat)
+    function eventStatus($eventDateTime, $forWhat)
     {
         // Ambil waktu sekarang
         $currentTime = now();
-
-        // Ambil waktu dan tanggal acara
-        $eventDateTime = Carbon::parse($eventDate . ' ' . $eventTime);
 
         // Hitung selisih waktu antara waktu sekarang dan waktu acara dalam jam
         $hoursDiff = $currentTime->diffInHours($eventDateTime, false); // false untuk mendapatkan selisih dalam jam
